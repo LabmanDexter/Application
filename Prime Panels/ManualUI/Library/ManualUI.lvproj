@@ -11,7 +11,7 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="ManualButtons.lvlib" Type="Library" URL="../ManualButtons.lvlib"/>
+		<Item Name="ManualUI.lvlib" Type="Library" URL="../ManualUI.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="Actor Framework.lvlibp" Type="LVLibp" URL="../../../../../builds/Framework/Actor Framework.lvlibp">
 				<Item Name="Time-Delayed Send Message" Type="Folder">
@@ -38,6 +38,26 @@
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../../../builds/Framework/Actor Framework.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="High Resolution Relative Seconds.vi" Type="VI" URL="../../../../../builds/Framework/Actor Framework.lvlibp/1abvi3w/vi.lib/Utility/High Resolution Relative Seconds.vi"/>
 			</Item>
+			<Item Name="Configuration.lvlibp" Type="LVLibp" URL="../../../../../builds/Framework/Configuration.lvlibp">
+				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
+				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
+				<Item Name="Clear Errors.vi" Type="VI" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Clear Errors.vi"/>
+				<Item Name="Close File+.vi" Type="VI" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Close File+.vi"/>
+				<Item Name="compatReadText.vi" Type="VI" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/_oldvers/_oldvers.llb/compatReadText.vi"/>
+				<Item Name="Configuration.lvclass" Type="LVClass" URL="../../../../../builds/Framework/Configuration.lvlibp/Library/Configuration.lvclass"/>
+				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="Find First Error.vi" Type="VI" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Find First Error.vi"/>
+				<Item Name="NI_FileType.lvlib" Type="Library" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/lvfile.llb/NI_FileType.lvlib"/>
+				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/config.llb/NI_LVConfig.lvlib"/>
+				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
+				<Item Name="Open File+.vi" Type="VI" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Open File+.vi"/>
+				<Item Name="Read Delimited Spreadsheet (string).vi" Type="VI" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Read Delimited Spreadsheet (string).vi"/>
+				<Item Name="Read File+ (string).vi" Type="VI" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Read File+ (string).vi"/>
+				<Item Name="Read Lines From File (with error IO).vi" Type="VI" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Read Lines From File (with error IO).vi"/>
+				<Item Name="Trim Whitespace One-Sided.vi" Type="VI" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Trim Whitespace One-Sided.vi"/>
+				<Item Name="Trim Whitespace.vi" Type="VI" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Trim Whitespace.vi"/>
+				<Item Name="whitespace.ctl" Type="VI" URL="../../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/whitespace.ctl"/>
+			</Item>
 			<Item Name="Docking.lvlibp" Type="LVLibp" URL="../../../../../builds/Main/Docking.lvlibp">
 				<Item Name="Messages for Docking" Type="Folder">
 					<Item Name="Adjust Splitter Msg.lvclass" Type="LVClass" URL="../../../../../builds/Main/Docking.lvlibp/Docking Messages/Adjust Splitter Msg/Adjust Splitter Msg.lvclass"/>
@@ -60,6 +80,42 @@
 				<Item Name="MoveMemory.vi" Type="VI" URL="../../../../../builds/Framework/Engine.lvlibp/1abvi3w/vi.lib/Platform/fileVersionInfo.llb/MoveMemory.vi"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="../../../../../builds/Framework/Engine.lvlibp/1abvi3w/vi.lib/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="VerQueryValue.vi" Type="VI" URL="../../../../../builds/Framework/Engine.lvlibp/1abvi3w/vi.lib/Platform/fileVersionInfo.llb/VerQueryValue.vi"/>
+			</Item>
+			<Item Name="Instrument.lvlibp" Type="LVLibp" URL="../../../../../builds/Instruments/Instrument.lvlibp">
+				<Item Name="Messages" Type="Folder">
+					<Item Name="Measure Msg.lvclass" Type="LVClass" URL="../../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Measure Msg/Measure Msg.lvclass"/>
+					<Item Name="Power Off Msg.lvclass" Type="LVClass" URL="../../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Power Off Msg/Power Off Msg.lvclass"/>
+					<Item Name="Request Data Msg.lvclass" Type="LVClass" URL="../../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Request Data Msg/Request Data Msg.lvclass"/>
+					<Item Name="Send Command Msg.lvclass" Type="LVClass" URL="../../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Send Command Msg/Send Command Msg.lvclass"/>
+					<Item Name="Take Snapshot Msg.lvclass" Type="LVClass" URL="../../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Take Snapshot Msg/Take Snapshot Msg.lvclass"/>
+				</Item>
+				<Item Name="Equal Comparable.lvclass" Type="LVClass" URL="../../../../../builds/Instruments/Instrument.lvlibp/1abvi3w/vi.lib/Comparison/Equal/Equal Comparable/Equal Comparable.lvclass"/>
+				<Item Name="Equal Functor.lvclass" Type="LVClass" URL="../../../../../builds/Instruments/Instrument.lvlibp/1abvi3w/vi.lib/Comparison/Equal/Equal Functor/Equal Functor.lvclass"/>
+				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="Event from Ary I8.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary I8.vi"/>
+				<Item Name="Event from Ary I16.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary I16.vi"/>
+				<Item Name="Event from Ary I32.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary I32.vi"/>
+				<Item Name="Event from Ary I64.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary I64.vi"/>
+				<Item Name="Event from Ary U8.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary U8.vi"/>
+				<Item Name="Event from Ary U16.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary U16.vi"/>
+				<Item Name="Event from Ary U32.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary U32.vi"/>
+				<Item Name="Event from Ary U64.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary U64.vi"/>
+				<Item Name="Event from Boolean.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Special/Event from Boolean.vi"/>
+				<Item Name="Event from DBL Ary.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from DBL Ary.vi"/>
+				<Item Name="Event from DBL.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from DBL.vi"/>
+				<Item Name="Event from Enum.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Special/Event from Enum.vi"/>
+				<Item Name="Event from I8.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from I8.vi"/>
+				<Item Name="Event from I16.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from I16.vi"/>
+				<Item Name="Event from I32.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from I32.vi"/>
+				<Item Name="Event from I64.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from I64.vi"/>
+				<Item Name="Event from Ring.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Special/Event from Ring.vi"/>
+				<Item Name="Event from String.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Special/Event from String.vi"/>
+				<Item Name="Event from U8.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from U8.vi"/>
+				<Item Name="Event from U16.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from U16.vi"/>
+				<Item Name="Event from U32.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from U32.vi"/>
+				<Item Name="Event from U64.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from U64.vi"/>
+				<Item Name="Instruments.lvclass" Type="LVClass" URL="../../../../../builds/Instruments/Instrument.lvlibp/Library/Instruments.lvclass"/>
+				<Item Name="VI Name Extract.vi" Type="VI" URL="../../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/VI Name Extract.vi"/>
 			</Item>
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -181,20 +237,19 @@
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
-			<Item Name="ManualButtons" Type="Packed Library">
+			<Item Name="ManualUI" Type="Packed Library">
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{7DAF0648-5F1E-467E-9380-1E262AD23EAC}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">ManualButtons</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{03811F5C-7A5D-4839-9554-14AFEEAD9BE4}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">ManualUI</Property>
 				<Property Name="Bld_excludeDependentDLLs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeDependentPPLs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
 				<Property Name="Bld_localDestDir" Type="Path">/C/Users/Public/Documents/Development/builds/Main</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{6B1FEF5D-AFD6-4939-80A3-A84B676DE3BE}</Property>
-				<Property Name="Bld_version.build" Type="Int">1</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{F8D809E7-FC1A-4956-BFA9-C160313AD068}</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">ManualButtons.lvlibp</Property>
+				<Property Name="Destination[0].destName" Type="Str">ManualUI.lvlibp</Property>
 				<Property Name="Destination[0].path" Type="Path">/C/Users/Public/Documents/Development/builds/Main/NI_AB_PROJECTNAME.lvlibp</Property>
 				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
@@ -204,10 +259,10 @@
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="PackedLib_callersAdapt" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{C6FAB7D5-2C02-488B-9960-3291689012BF}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{955FA0A1-08AD-4A1D-9E97-0751D9C8F13A}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/ManualButtons.lvlib</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/ManualUI.lvlib</Property>
 				<Property Name="Source[1].Library.allowMissingMembers" Type="Bool">true</Property>
 				<Property Name="Source[1].Library.atomicCopy" Type="Bool">true</Property>
 				<Property Name="Source[1].Library.LVLIBPtopLevel" Type="Bool">true</Property>
@@ -216,12 +271,13 @@
 				<Property Name="Source[1].type" Type="Str">Library</Property>
 				<Property Name="SourceCount" Type="Int">2</Property>
 				<Property Name="TgtF_companyName" Type="Str">Anduril</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">ManualButtons</Property>
-				<Property Name="TgtF_internalName" Type="Str">ManualButtons</Property>
+				<Property Name="TgtF_enableDebugging" Type="Bool">true</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">ManualUI</Property>
+				<Property Name="TgtF_internalName" Type="Str">ManualUI</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2025 Anduril</Property>
-				<Property Name="TgtF_productName" Type="Str">ManualButtons</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{DC98FF52-3BB3-4020-A39D-25F3FB0304BB}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">ManualButtons.lvlibp</Property>
+				<Property Name="TgtF_productName" Type="Str">ManualUI</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{5F30335D-9D68-4E40-9084-617FE8FE4F97}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">ManualUI.lvlibp</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 		</Item>

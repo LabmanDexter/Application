@@ -42,6 +42,26 @@
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../../builds/Framework/Actor Framework.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="High Resolution Relative Seconds.vi" Type="VI" URL="../../../../builds/Framework/Actor Framework.lvlibp/1abvi3w/vi.lib/Utility/High Resolution Relative Seconds.vi"/>
 			</Item>
+			<Item Name="Configuration.lvlibp" Type="LVLibp" URL="../../../../builds/Framework/Configuration.lvlibp">
+				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
+				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
+				<Item Name="Clear Errors.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Clear Errors.vi"/>
+				<Item Name="Close File+.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Close File+.vi"/>
+				<Item Name="compatReadText.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/_oldvers/_oldvers.llb/compatReadText.vi"/>
+				<Item Name="Configuration.lvclass" Type="LVClass" URL="../../../../builds/Framework/Configuration.lvlibp/Library/Configuration.lvclass"/>
+				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="Find First Error.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Find First Error.vi"/>
+				<Item Name="NI_FileType.lvlib" Type="Library" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/lvfile.llb/NI_FileType.lvlib"/>
+				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/config.llb/NI_LVConfig.lvlib"/>
+				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
+				<Item Name="Open File+.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Open File+.vi"/>
+				<Item Name="Read Delimited Spreadsheet (string).vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Read Delimited Spreadsheet (string).vi"/>
+				<Item Name="Read File+ (string).vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Read File+ (string).vi"/>
+				<Item Name="Read Lines From File (with error IO).vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Read Lines From File (with error IO).vi"/>
+				<Item Name="Trim Whitespace One-Sided.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Trim Whitespace One-Sided.vi"/>
+				<Item Name="Trim Whitespace.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Trim Whitespace.vi"/>
+				<Item Name="whitespace.ctl" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/whitespace.ctl"/>
+			</Item>
 			<Item Name="Debugger.lvlibp" Type="LVLibp" URL="../../../../builds/Main/Debugger.lvlibp">
 				<Item Name="Debugger.lvclass" Type="LVClass" URL="../../../../builds/Main/Debugger.lvlibp/Library/Debugger.lvclass"/>
 			</Item>
@@ -98,8 +118,50 @@
 				<Item Name="LVMapReplaceAction.ctl" Type="VI" URL="../../../../builds/Main/Fault Monitor.lvlibp/1abvi3w/vi.lib/Utility/miscctls.llb/LVMapReplaceAction.ctl"/>
 				<Item Name="Space Constant.vi" Type="VI" URL="../../../../builds/Main/Fault Monitor.lvlibp/1abvi3w/vi.lib/dlg_ctls.llb/Space Constant.vi"/>
 			</Item>
+			<Item Name="Instrument.lvlibp" Type="LVLibp" URL="../../../../builds/Instruments/Instrument.lvlibp">
+				<Item Name="Messages" Type="Folder">
+					<Item Name="Measure Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Measure Msg/Measure Msg.lvclass"/>
+					<Item Name="Power Off Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Power Off Msg/Power Off Msg.lvclass"/>
+					<Item Name="Request Data Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Request Data Msg/Request Data Msg.lvclass"/>
+					<Item Name="Send Command Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Send Command Msg/Send Command Msg.lvclass"/>
+					<Item Name="Take Snapshot Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Take Snapshot Msg/Take Snapshot Msg.lvclass"/>
+				</Item>
+				<Item Name="Equal Comparable.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/1abvi3w/vi.lib/Comparison/Equal/Equal Comparable/Equal Comparable.lvclass"/>
+				<Item Name="Equal Functor.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/1abvi3w/vi.lib/Comparison/Equal/Equal Functor/Equal Functor.lvclass"/>
+				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="Event from Ary I8.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary I8.vi"/>
+				<Item Name="Event from Ary I16.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary I16.vi"/>
+				<Item Name="Event from Ary I32.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary I32.vi"/>
+				<Item Name="Event from Ary I64.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary I64.vi"/>
+				<Item Name="Event from Ary U8.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary U8.vi"/>
+				<Item Name="Event from Ary U16.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary U16.vi"/>
+				<Item Name="Event from Ary U32.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary U32.vi"/>
+				<Item Name="Event from Ary U64.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary U64.vi"/>
+				<Item Name="Event from Boolean.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Special/Event from Boolean.vi"/>
+				<Item Name="Event from DBL Ary.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from DBL Ary.vi"/>
+				<Item Name="Event from DBL.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from DBL.vi"/>
+				<Item Name="Event from Enum.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Special/Event from Enum.vi"/>
+				<Item Name="Event from I8.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from I8.vi"/>
+				<Item Name="Event from I16.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from I16.vi"/>
+				<Item Name="Event from I32.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from I32.vi"/>
+				<Item Name="Event from I64.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from I64.vi"/>
+				<Item Name="Event from Ring.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Special/Event from Ring.vi"/>
+				<Item Name="Event from String.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Special/Event from String.vi"/>
+				<Item Name="Event from U8.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from U8.vi"/>
+				<Item Name="Event from U16.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from U16.vi"/>
+				<Item Name="Event from U32.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from U32.vi"/>
+				<Item Name="Event from U64.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from U64.vi"/>
+				<Item Name="Instruments.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Library/Instruments.lvclass"/>
+				<Item Name="VI Name Extract.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/VI Name Extract.vi"/>
+			</Item>
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
+			<Item Name="ManualButtons.lvlibp" Type="LVLibp" URL="../../../../builds/Main/ManualButtons.lvlibp">
+				<Item Name="ManualButtons.lvclass" Type="LVClass" URL="../../../../builds/Main/ManualButtons.lvlibp/Library/ManualButtons.lvclass"/>
+			</Item>
+			<Item Name="ManualUI.lvlibp" Type="LVLibp" URL="../../../../builds/Main/ManualUI.lvlibp">
+				<Item Name="ManualUI.lvclass" Type="LVClass" URL="../../../../builds/Main/ManualUI.lvlibp/Library/ManualUI.lvclass"/>
 			</Item>
 			<Item Name="Monitored Actor.lvlibp" Type="LVLibp" URL="../../../../builds/Framework/Monitored Actor.lvlibp">
 				<Item Name="Actor Monitor" Type="Folder">
