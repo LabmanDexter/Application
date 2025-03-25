@@ -9,6 +9,7 @@
 </Property>
 	<Item Name="Messages" Type="Folder">
 		<Item Name="Menu Response Msg.lvclass" Type="LVClass" URL="../../Main Messages/Menu Response Msg/Menu Response Msg.lvclass"/>
+		<Item Name="Toggle Component Display Msg.lvclass" Type="LVClass" URL="../../Main Messages/Toggle Component Display Msg/Toggle Component Display Msg.lvclass"/>
 	</Item>
 	<Item Name="Launch Main.vi" Type="VI" URL="../../Launch Main.vi"/>
 	<Item Name="Main.lvclass" Type="LVClass" URL="../Main.lvclass"/>

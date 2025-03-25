@@ -42,6 +42,9 @@
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../../builds/Framework/Actor Framework.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="High Resolution Relative Seconds.vi" Type="VI" URL="../../../../builds/Framework/Actor Framework.lvlibp/1abvi3w/vi.lib/Utility/High Resolution Relative Seconds.vi"/>
 			</Item>
+			<Item Name="Debugger.lvlibp" Type="LVLibp" URL="../../../../builds/Main/Debugger.lvlibp">
+				<Item Name="Debugger.lvclass" Type="LVClass" URL="../../../../builds/Main/Debugger.lvlibp/Library/Debugger.lvclass"/>
+			</Item>
 			<Item Name="Docking.lvlibp" Type="LVLibp" URL="../../../../builds/Main/Docking.lvlibp">
 				<Item Name="Messages for Docking" Type="Folder">
 					<Item Name="Adjust Splitter Msg.lvclass" Type="LVClass" URL="../../../../builds/Main/Docking.lvlibp/Docking Messages/Adjust Splitter Msg/Adjust Splitter Msg.lvclass"/>
