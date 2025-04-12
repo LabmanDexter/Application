@@ -16,6 +16,12 @@
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Casting Utility For Actors.vim" Type="VI" URL="/&lt;vilib&gt;/ActorFramework/Actor/Casting Utility For Actors.vim"/>
+				<Item Name="Equal Comparable.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Comparison/Equal/Equal Comparable/Equal Comparable.lvclass"/>
+				<Item Name="Equal Functor.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Comparison/Equal/Equal Functor/Equal Functor.lvclass"/>
+				<Item Name="Equals.vim" Type="VI" URL="/&lt;vilib&gt;/Comparison/Equals.vim"/>
+				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="Search Unsorted 1D Array Core.vim" Type="VI" URL="/&lt;vilib&gt;/Array/Helpers/Search Unsorted 1D Array Core.vim"/>
+				<Item Name="Search Unsorted 1D Array.vim" Type="VI" URL="/&lt;vilib&gt;/Array/Search Unsorted 1D Array.vim"/>
 			</Item>
 			<Item Name="Actor Framework.lvlibp" Type="LVLibp" URL="../../../../builds/Framework/Actor Framework.lvlibp">
 				<Item Name="Time-Delayed Send Message" Type="Folder">
@@ -97,6 +103,7 @@
 			</Item>
 			<Item Name="Engine.lvlibp" Type="LVLibp" URL="../../../../builds/Framework/Engine.lvlibp">
 				<Item Name="BuildErrorSource.vi" Type="VI" URL="../../../../builds/Framework/Engine.lvlibp/1abvi3w/vi.lib/Platform/fileVersionInfo.llb/BuildErrorSource.vi"/>
+				<Item Name="Dflt Data Dir.vi" Type="VI" URL="../../../../builds/Framework/Engine.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Dflt Data Dir.vi"/>
 				<Item Name="Engine.lvclass" Type="LVClass" URL="../../../../builds/Framework/Engine.lvlibp/Engine/Library/Engine.lvclass"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../../builds/Framework/Engine.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="FileVersionInfo.vi" Type="VI" URL="../../../../builds/Framework/Engine.lvlibp/1abvi3w/vi.lib/Platform/fileVersionInfo.llb/FileVersionInfo.vi"/>
@@ -123,37 +130,16 @@
 					<Item Name="Measure Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Measure Msg/Measure Msg.lvclass"/>
 					<Item Name="Power Off Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Power Off Msg/Power Off Msg.lvclass"/>
 					<Item Name="Request Data Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Request Data Msg/Request Data Msg.lvclass"/>
+					<Item Name="Select Display Mode Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Select Display Mode Msg/Select Display Mode Msg.lvclass"/>
 					<Item Name="Send Command Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Send Command Msg/Send Command Msg.lvclass"/>
 					<Item Name="Take Snapshot Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Take Snapshot Msg/Take Snapshot Msg.lvclass"/>
 				</Item>
 				<Item Name="Equal Comparable.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/1abvi3w/vi.lib/Comparison/Equal/Equal Comparable/Equal Comparable.lvclass"/>
 				<Item Name="Equal Functor.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/1abvi3w/vi.lib/Comparison/Equal/Equal Functor/Equal Functor.lvclass"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
-				<Item Name="Event from Ary I8.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary I8.vi"/>
-				<Item Name="Event from Ary I16.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary I16.vi"/>
-				<Item Name="Event from Ary I32.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary I32.vi"/>
-				<Item Name="Event from Ary I64.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary I64.vi"/>
-				<Item Name="Event from Ary U8.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary U8.vi"/>
-				<Item Name="Event from Ary U16.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary U16.vi"/>
-				<Item Name="Event from Ary U32.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary U32.vi"/>
-				<Item Name="Event from Ary U64.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from Ary U64.vi"/>
-				<Item Name="Event from Boolean.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Special/Event from Boolean.vi"/>
-				<Item Name="Event from DBL Ary.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Arrays/Event from DBL Ary.vi"/>
-				<Item Name="Event from DBL.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from DBL.vi"/>
-				<Item Name="Event from Enum.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Special/Event from Enum.vi"/>
-				<Item Name="Event from I8.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from I8.vi"/>
-				<Item Name="Event from I16.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from I16.vi"/>
-				<Item Name="Event from I32.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from I32.vi"/>
-				<Item Name="Event from I64.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from I64.vi"/>
-				<Item Name="Event from Ring.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Special/Event from Ring.vi"/>
-				<Item Name="Event from String.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Special/Event from String.vi"/>
-				<Item Name="Event from U8.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from U8.vi"/>
-				<Item Name="Event from U16.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from U16.vi"/>
-				<Item Name="Event from U32.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from U32.vi"/>
-				<Item Name="Event from U64.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/Integers/Event from U64.vi"/>
 				<Item Name="Instruments.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Library/Instruments.lvclass"/>
-				<Item Name="VI Name Extract.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/Private/Polymorphic/VI Name Extract.vi"/>
 			</Item>
+			<Item Name="Instruments.lvlib" Type="Library" URL="../../../../Instruments/Library/Instruments.lvlib"/>
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -275,10 +261,70 @@
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="../../../../builds/Tools/QDMH.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Trim Whitespace.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="../../../../builds/Tools/QDMH.lvlibp/1abvi3w/vi.lib/Utility/error.llb/whitespace.ctl"/>
 			</Item>
+			<Item Name="ReportGenerator.lvlibp" Type="LVLibp" URL="../../../../builds/Main/ReportGenerator.lvlibp">
+				<Item Name="Messages" Type="Folder">
+					<Item Name="Periodically Flush Queue Msg.lvclass" Type="LVClass" URL="../../../../builds/Main/ReportGenerator.lvlibp/Report Generator Messages/Periodically Flush Queue Msg/Periodically Flush Queue Msg.lvclass"/>
+					<Item Name="Toggle Report Open Close Msg.lvclass" Type="LVClass" URL="../../../../builds/Main/ReportGenerator.lvlibp/Report Generator Messages/Toggle Report Open Close Msg/Toggle Report Open Close Msg.lvclass"/>
+				</Item>
+				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="../../../../builds/Main/ReportGenerator.lvlibp/1abvi3w/vi.lib/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
+				<Item Name="Dflt Data Dir.vi" Type="VI" URL="../../../../builds/Main/ReportGenerator.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Dflt Data Dir.vi"/>
+				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../../builds/Main/ReportGenerator.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="NI_FileType.lvlib" Type="Library" URL="../../../../builds/Main/ReportGenerator.lvlibp/1abvi3w/vi.lib/Utility/lvfile.llb/NI_FileType.lvlib"/>
+				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="../../../../builds/Main/ReportGenerator.lvlibp/1abvi3w/vi.lib/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
+				<Item Name="Report Generator.lvclass" Type="LVClass" URL="../../../../builds/Main/ReportGenerator.lvlibp/Library/Report Generator.lvclass"/>
+			</Item>
+			<Item Name="TDMS.lvlibp" Type="LVLibp" URL="../../../../builds/Tools/TDMS.lvlibp">
+				<Item Name="TDMS.lvclass" Type="LVClass" URL="../../../../builds/Tools/TDMS.lvlibp/Library/TDMS.lvclass"/>
+			</Item>
 			<Item Name="version.dll" Type="Document" URL="version.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 		</Item>
-		<Item Name="Build Specifications" Type="Build"/>
+		<Item Name="Build Specifications" Type="Build">
+			<Item Name="Main" Type="Packed Library">
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{8E1C1B63-979D-43B4-8FD3-0B852579D76E}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">Main</Property>
+				<Property Name="Bld_excludeDependentDLLs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeDependentPPLs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">/C/Users/Public/Documents/Development/builds/NI_AB_PROJECTNAME</Property>
+				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{05FBA4B2-7D66-4D0E-B433-D293273F73F9}</Property>
+				<Property Name="Bld_version.build" Type="Int">2</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">Main.lvlibp</Property>
+				<Property Name="Destination[0].path" Type="Path">/C/Users/Public/Documents/Development/builds/NI_AB_PROJECTNAME/Main.lvlibp</Property>
+				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">/C/Users/Public/Documents/Development/builds/NI_AB_PROJECTNAME</Property>
+				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="PackedLib_callersAdapt" Type="Bool">true</Property>
+				<Property Name="Source[0].itemID" Type="Str">{B61B8F85-C476-4CAE-9DBE-E1D656EABEA0}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Main.lvlib</Property>
+				<Property Name="Source[1].Library.allowMissingMembers" Type="Bool">true</Property>
+				<Property Name="Source[1].Library.atomicCopy" Type="Bool">true</Property>
+				<Property Name="Source[1].Library.LVLIBPtopLevel" Type="Bool">true</Property>
+				<Property Name="Source[1].preventRename" Type="Bool">true</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">Library</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
+				<Property Name="TgtF_companyName" Type="Str">Anduril</Property>
+				<Property Name="TgtF_enableDebugging" Type="Bool">true</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">Main</Property>
+				<Property Name="TgtF_internalName" Type="Str">Main</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2025 Anduril</Property>
+				<Property Name="TgtF_productName" Type="Str">Main</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{29760229-5676-4064-911A-89D96EC47E7E}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">Main.lvlibp</Property>
+				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
+			</Item>
+		</Item>
 	</Item>
 </Project>
