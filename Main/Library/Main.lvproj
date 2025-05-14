@@ -16,12 +16,6 @@
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Casting Utility For Actors.vim" Type="VI" URL="/&lt;vilib&gt;/ActorFramework/Actor/Casting Utility For Actors.vim"/>
-				<Item Name="Equal Comparable.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Comparison/Equal/Equal Comparable/Equal Comparable.lvclass"/>
-				<Item Name="Equal Functor.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Comparison/Equal/Equal Functor/Equal Functor.lvclass"/>
-				<Item Name="Equals.vim" Type="VI" URL="/&lt;vilib&gt;/Comparison/Equals.vim"/>
-				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
-				<Item Name="Search Unsorted 1D Array Core.vim" Type="VI" URL="/&lt;vilib&gt;/Array/Helpers/Search Unsorted 1D Array Core.vim"/>
-				<Item Name="Search Unsorted 1D Array.vim" Type="VI" URL="/&lt;vilib&gt;/Array/Search Unsorted 1D Array.vim"/>
 			</Item>
 			<Item Name="Actor Framework.lvlibp" Type="LVLibp" URL="../../../../builds/Framework/Actor Framework.lvlibp">
 				<Item Name="Time-Delayed Send Message" Type="Folder">
@@ -57,6 +51,8 @@
 				<Item Name="Configuration.lvclass" Type="LVClass" URL="../../../../builds/Framework/Configuration.lvlibp/Library/Configuration.lvclass"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="Find First Error.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Find First Error.vi"/>
+				<Item Name="List Directory and LLBs.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/libraryn.llb/List Directory and LLBs.vi"/>
+				<Item Name="LVMapReplaceAction.ctl" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/miscctls.llb/LVMapReplaceAction.ctl"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/lvfile.llb/NI_FileType.lvlib"/>
 				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/config.llb/NI_LVConfig.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
@@ -64,9 +60,19 @@
 				<Item Name="Read Delimited Spreadsheet (string).vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Read Delimited Spreadsheet (string).vi"/>
 				<Item Name="Read File+ (string).vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Read File+ (string).vi"/>
 				<Item Name="Read Lines From File (with error IO).vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/file.llb/Read Lines From File (with error IO).vi"/>
+				<Item Name="Recursive File List.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/libraryn.llb/Recursive File List.vi"/>
+				<Item Name="Space Constant.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/dlg_ctls.llb/Space Constant.vi"/>
 				<Item Name="Trim Whitespace One-Sided.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Trim Whitespace One-Sided.vi"/>
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Trim Whitespace.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="../../../../builds/Framework/Configuration.lvlibp/1abvi3w/vi.lib/Utility/error.llb/whitespace.ctl"/>
+			</Item>
+			<Item Name="ConfigurationEditor.lvlibp" Type="LVLibp" URL="../../../../builds/Main/ConfigurationEditor.lvlibp">
+				<Item Name="Messages" Type="Folder">
+					<Item Name="Add Device Msg.lvclass" Type="LVClass" URL="../../../../builds/Main/ConfigurationEditor.lvlibp/Configuration Editor Messages/Add Device Msg/Add Device Msg.lvclass"/>
+					<Item Name="Remove Device Msg.lvclass" Type="LVClass" URL="../../../../builds/Main/ConfigurationEditor.lvlibp/Configuration Editor Messages/Remove Device Msg/Remove Device Msg.lvclass"/>
+					<Item Name="Select Device Msg.lvclass" Type="LVClass" URL="../../../../builds/Main/ConfigurationEditor.lvlibp/Configuration Editor Messages/Select Device Msg/Select Device Msg.lvclass"/>
+				</Item>
+				<Item Name="Configuration Editor.lvclass" Type="LVClass" URL="../../../../builds/Main/ConfigurationEditor.lvlibp/Library/Configuration Editor.lvclass"/>
 			</Item>
 			<Item Name="Debugger.lvlibp" Type="LVLibp" URL="../../../../builds/Main/Debugger.lvlibp">
 				<Item Name="Debugger.lvclass" Type="LVClass" URL="../../../../builds/Main/Debugger.lvlibp/Library/Debugger.lvclass"/>
@@ -125,21 +131,20 @@
 				<Item Name="LVMapReplaceAction.ctl" Type="VI" URL="../../../../builds/Main/Fault Monitor.lvlibp/1abvi3w/vi.lib/Utility/miscctls.llb/LVMapReplaceAction.ctl"/>
 				<Item Name="Space Constant.vi" Type="VI" URL="../../../../builds/Main/Fault Monitor.lvlibp/1abvi3w/vi.lib/dlg_ctls.llb/Space Constant.vi"/>
 			</Item>
-			<Item Name="Instrument.lvlibp" Type="LVLibp" URL="../../../../builds/Instruments/Instrument.lvlibp">
+			<Item Name="Instruments.lvlibp" Type="LVLibp" URL="../../../../builds/Instruments/Instruments.lvlibp">
 				<Item Name="Messages" Type="Folder">
-					<Item Name="Measure Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Measure Msg/Measure Msg.lvclass"/>
-					<Item Name="Power Off Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Power Off Msg/Power Off Msg.lvclass"/>
-					<Item Name="Request Data Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Request Data Msg/Request Data Msg.lvclass"/>
-					<Item Name="Select Display Mode Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Select Display Mode Msg/Select Display Mode Msg.lvclass"/>
-					<Item Name="Send Command Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Send Command Msg/Send Command Msg.lvclass"/>
-					<Item Name="Take Snapshot Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Instruments Messages/Take Snapshot Msg/Take Snapshot Msg.lvclass"/>
+					<Item Name="Measure Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instruments.lvlibp/Instruments Messages/Measure Msg/Measure Msg.lvclass"/>
+					<Item Name="Power Off Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instruments.lvlibp/Instruments Messages/Power Off Msg/Power Off Msg.lvclass"/>
+					<Item Name="Request Data Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instruments.lvlibp/Instruments Messages/Request Data Msg/Request Data Msg.lvclass"/>
+					<Item Name="Select Display Mode Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instruments.lvlibp/Instruments Messages/Select Display Mode Msg/Select Display Mode Msg.lvclass"/>
+					<Item Name="Send Command Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instruments.lvlibp/Instruments Messages/Send Command Msg/Send Command Msg.lvclass"/>
+					<Item Name="Take Snapshot Msg.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instruments.lvlibp/Instruments Messages/Take Snapshot Msg/Take Snapshot Msg.lvclass"/>
 				</Item>
-				<Item Name="Equal Comparable.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/1abvi3w/vi.lib/Comparison/Equal/Equal Comparable/Equal Comparable.lvclass"/>
-				<Item Name="Equal Functor.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/1abvi3w/vi.lib/Comparison/Equal/Equal Functor/Equal Functor.lvclass"/>
-				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../../builds/Instruments/Instrument.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
-				<Item Name="Instruments.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instrument.lvlibp/Library/Instruments.lvclass"/>
+				<Item Name="Equal Comparable.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instruments.lvlibp/1abvi3w/vi.lib/Comparison/Equal/Equal Comparable/Equal Comparable.lvclass"/>
+				<Item Name="Equal Functor.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instruments.lvlibp/1abvi3w/vi.lib/Comparison/Equal/Equal Functor/Equal Functor.lvclass"/>
+				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../../builds/Instruments/Instruments.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="Instruments.lvclass" Type="LVClass" URL="../../../../builds/Instruments/Instruments.lvlibp/Library/Instruments.lvclass"/>
 			</Item>
-			<Item Name="Instruments.lvlib" Type="Library" URL="../../../../Instruments/Library/Instruments.lvlib"/>
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -147,6 +152,9 @@
 				<Item Name="ManualButtons.lvclass" Type="LVClass" URL="../../../../builds/Main/ManualButtons.lvlibp/Library/ManualButtons.lvclass"/>
 			</Item>
 			<Item Name="ManualUI.lvlibp" Type="LVLibp" URL="../../../../builds/Main/ManualUI.lvlibp">
+				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="../../../../builds/Main/ManualUI.lvlibp/1abvi3w/vi.lib/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="Get LV Class Default Value.vi" Type="VI" URL="../../../../builds/Main/ManualUI.lvlibp/1abvi3w/vi.lib/Utility/LVClass/Get LV Class Default Value.vi"/>
+				<Item Name="Get LV Class Path.vi" Type="VI" URL="../../../../builds/Main/ManualUI.lvlibp/1abvi3w/vi.lib/Utility/LVClass/Get LV Class Path.vi"/>
 				<Item Name="ManualUI.lvclass" Type="LVClass" URL="../../../../builds/Main/ManualUI.lvlibp/Library/ManualUI.lvclass"/>
 			</Item>
 			<Item Name="Monitored Actor.lvlibp" Type="LVLibp" URL="../../../../builds/Framework/Monitored Actor.lvlibp">
@@ -292,7 +300,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">/C/Users/Public/Documents/Development/builds/NI_AB_PROJECTNAME</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{05FBA4B2-7D66-4D0E-B433-D293273F73F9}</Property>
-				<Property Name="Bld_version.build" Type="Int">2</Property>
+				<Property Name="Bld_version.build" Type="Int">5</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Main.lvlibp</Property>
 				<Property Name="Destination[0].path" Type="Path">/C/Users/Public/Documents/Development/builds/NI_AB_PROJECTNAME/Main.lvlibp</Property>
