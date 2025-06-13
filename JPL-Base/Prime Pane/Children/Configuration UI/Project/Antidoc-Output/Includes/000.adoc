@@ -1,0 +1,4 @@
+== Project description
+
++++The configuration user interface provides a means to edit the config.ini file in a more user-friendly format than editing the .ini file manually.+++
+

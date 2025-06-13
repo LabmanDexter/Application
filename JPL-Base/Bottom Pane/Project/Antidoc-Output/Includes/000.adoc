@@ -1,0 +1,6 @@
+== Project description
+
++++The bottom panel class is an abstraction layer for any panel that should be docked in the bottom pane of the Main UI for JPL Base Software.   By defintion, abstraction layers only perform basic functions that are expected to be common amongst all of the children classes.  The bottom pane currently houses message definitions for subordinate classes as follows:+++
+
++++1.  Override Function:  Adjust Splitter Position.  Main UI uses splitters to define regions where user interfaces will be housed.  This utility instructs the Main UI to re-position the splitter supressing the bottom pane to its normal (hidden) position at the bounds of the monitor's lower resolution, or to its active (shown) position [height] pixels above the monitor's lower boundary.  This ensures sufficient space for user interaction when the bottom panel is active, and optimum UI space when the bottom panel is inactive.+++
+

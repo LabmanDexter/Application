@@ -1,0 +1,326 @@
+== Manual UI.lvclass
+
+*Responsibility:*
++++This is the Manual UI Class encapsulation to manages all of the installed & activated instruments, the panel in which they dock, the splitter positions, and responds to the <b>Manual Buttons</b> UI generated events.+++
+
+
+*Version:* 1.0.0.10
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "Manual UI.lvlib:Manual UI" {
+{field} -Splitters : Array of kLVObjSplitterBar
+{field} -Panels : Array of kLVObjSubPanel
+{field} -Subordinates : Array of Cluster
+{field} +Config : LV Class
+{field} -Splitter Positions : Array of I32
+{field} +Instruments : Array of Cluster
+{static} {method} +Change Active Instrument()
+{static} {method} +Close Instruments()
+{static} {method} +Launch Instruments()
+{static} {method} +Launch Subordinate and Add()
+{static} {method} +Query Instruments()
+{static} {method} +Update Main State()
+{static} {method} -Load Enabled Instrument List()
+{static} {method} -Load Instrument()
+{static} {method} -Add Subordinate()
+{static} {method} -Launch Subordinate()
+{static} {method} -Search for Subordinate()
+{static} {method} -Calculate Default Splitter Positions()
+{static} {method} -Default Splitter Positions()
+{static} {method} -Post Launch Init()
+{static} {method} -Pre Launch Support()
+{static} {method} -Shutdown()
+{method} +Reset Manual Layout()
+{method} #Actor Core()
+{method} #Pre Launch Init()
+{method} #Stop Core()
+
+}
+"Prime Panel.lvlibp:Prime Panel" <|-- "Manual UI.lvlib:Manual UI"
+"Manual UI.lvlib:Manual UI" *-- "Config.lvlibp:Config"
+
+"Manual UI.lvlib:Manual UI" o-- "Actor Framework.lvlibp:Message Enqueuer"
+"Manual UI.lvlib:Manual UI" o-- "Instruments.lvlibp:Instruments"
+
+
+@enduml
+....
+
+.Functions
+[cols="<.<4d,<.<8a,<.<12d,<.<1a,<.<1a,<.<1a", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Name |Connector pane |Description |S. |R. |I.
+
+|Read Config
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Read_Config.vi.png[Manual UI.lvlib:Manual UI.lvclass:Read Config.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Config
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Write_Config.vi.png[Manual UI.lvlib:Manual UI.lvclass:Write Config.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read instrPanels
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Read_instrPanels.vi.png[Manual UI.lvlib:Manual UI.lvclass:Read instrPanels.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write instrPanels
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Write_instrPanels.vi.png[Manual UI.lvlib:Manual UI.lvclass:Write instrPanels.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read instrSplitters
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Read_instrSplitters.vi.png[Manual UI.lvlib:Manual UI.lvclass:Read instrSplitters.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write instrSplitters
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Write_instrSplitters.vi.png[Manual UI.lvlib:Manual UI.lvclass:Write instrSplitters.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Instruments
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Read_Instruments.vi.png[Manual UI.lvlib:Manual UI.lvclass:Read Instruments.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Instruments
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Write_Instruments.vi.png[Manual UI.lvlib:Manual UI.lvclass:Write Instruments.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Change Active Instrument
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Change_Active_Instrument.vi.png[Manual UI.lvlib:Manual UI.lvclass:Change Active Instrument.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Close Instruments
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Close_Instruments.vi.png[Manual UI.lvlib:Manual UI.lvclass:Close Instruments.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Launch Instruments
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Launch_Instruments.vi.png[Manual UI.lvlib:Manual UI.lvclass:Launch Instruments.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Launch Subordinate and Add
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Launch_Subordinate_and_Add.vi.png[Manual UI.lvlib:Manual UI.lvclass:Launch Subordinate and Add.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Query Instruments
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Query_Instruments.vi.png[Manual UI.lvlib:Manual UI.lvclass:Query Instruments.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Reset Manual Layout
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Reset_Manual_Layout.vi.png[Manual UI.lvlib:Manual UI.lvclass:Reset Manual Layout.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Update Main State
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Update_Main_State.vi.png[Manual UI.lvlib:Manual UI.lvclass:Update Main State.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Actor Core
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Actor_Core.vi.png[Manual UI.lvlib:Manual UI.lvclass:Actor Core.vi]
+|+++The user interface for this panel.+++
+
++++----+++
++++Please see the following web address for additional documentation and tutorial information:+++
++++http://www.mooregoodideas.com/mgi-panel-manager/+++
+
++++Author: Derek Trepanier+++
+
++++Copyright (c) 2018, Moore Good Ideas, Inc.+++
+
++++All rights reserved.+++
+
++++Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:+++
+
++++    * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.+++
++++    * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.+++
++++    * Neither the name of Moore Good Ideas, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.+++
+
++++THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.+++
+
+|image:scope-protected.png[scope-protected.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Pre Launch Init
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Pre_Launch_Init.vi.png[Manual UI.lvlib:Manual UI.lvclass:Pre Launch Init.vi]
+|No description found (add content in vi description)
+|image:scope-protected.png[scope-protected.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Stop Core
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Stop_Core.vi.png[Manual UI.lvlib:Manual UI.lvclass:Stop Core.vi]
+|+++In addition to the following, this method also sends a message to the monitor to notify it that the actor has stopped execution.+++
+
++++(<B>Filename</B>: Actor Framework.lvlib:Actor.lvclass:Stop Core.vi)+++
+
+
+
++++Defines what the actor does before it stops. Use the <B>final error code</B> input to determine whether the actor shut down in response to an error.+++
+
+
+
++++By default, this method does nothing. A descendant class may override it to define behavior, such as shutting down any processes the actor initiated in its override of the Actor Core method.+++
+
+
+
++++Copyright: MGI+++
+
+
+
++++Authored by Derek Trepanier+++
++++support@mooregoodideas.com+++
++++www.mooregoodideas.com+++
+
++++Copyright (c) 2014, Moore Good Ideas, Inc.+++
+
++++All rights reserved.+++
+
++++Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:+++
+
++++    * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.+++
++++    * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.+++
++++    * Neither the name of Moore Good Ideas, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.+++
+
++++THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.+++
+
+|image:scope-protected.png[scope-protected.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Load Enabled Instrument List
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Load_Enabled_Instrument_List.vi.png[Manual UI.lvlib:Manual UI.lvclass:Load Enabled Instrument List.vi]
+|+++This routine loads the config.ini file,  filters out devices that are not instruments, or not enabled, and returns a list of enabled instruments to launch.  +++
+
++++This is a pre-instrument launch directive, meant to be called immediately before launching instruments in case the user changes the configuration at run time.+++
+
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Load Instrument
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Load_Instrument.vi.png[Manual UI.lvlib:Manual UI.lvclass:Load Instrument.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Read Panel Devices
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Read_Panel_Devices.vi.png[Manual UI.lvlib:Manual UI.lvclass:Read Panel Devices.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Add Subordinate
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Add_Subordinate.vi.png[Manual UI.lvlib:Manual UI.lvclass:Add Subordinate.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Launch Subordinate
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Launch_Subordinate.vi.png[Manual UI.lvlib:Manual UI.lvclass:Launch Subordinate.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Search for Subordinate
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Search_for_Subordinate.vi.png[Manual UI.lvlib:Manual UI.lvclass:Search for Subordinate.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Calculate Default Splitter Positions
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Calculate_Default_Splitter_Positions.vi.png[Manual UI.lvlib:Manual UI.lvclass:Calculate Default Splitter Positions.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Default Splitter Positions
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Default_Splitter_Positions.vi.png[Manual UI.lvlib:Manual UI.lvclass:Default Splitter Positions.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Post Launch Init
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Post_Launch_Init.vi.png[Manual UI.lvlib:Manual UI.lvclass:Post Launch Init.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Pre Launch Support
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Pre_Launch_Support.vi.png[Manual UI.lvlib:Manual UI.lvclass:Pre Launch Support.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Shutdown
+|image:Manual_UI.lvlib_Manual_UI.lvclass_Shutdown.vi.png[Manual UI.lvlib:Manual UI.lvclass:Shutdown.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|===
+
+**S**cope: image:scope-protected.png[] -> Protected | image:scope-community.png[] -> Community | image:scope-private.png[] -> Private
+
+**R**eentrancy: image:reentrancy-preallocated.png[] -> Preallocated reentrancy | image:reentrancy-shared.png[] -> Shared reentrancy
+
+**I**nlining: image:inlined.png[] -> Inlined

@@ -1,0 +1,23 @@
+== Project description
+
++++This is the library encapsulation for the base software's engine application.+++
+
++++Common methods, queue references, and event references are stored and accessible via this class. +++
+
++++This tool also manages event generation on it's encapsulated events/queues+++
+
++++In the Actor Framework Heirarchy, Engine is located here:+++
+
++++<b>Actor Framework</b> - Labview COTS Actor Framework library+++
+
++++<b>Monitored Actor</b> - MGI Actor Monitor toolkit+++
+
++++<b>Panel Actor</b> - MGI Panel Manager Toolkit+++
+
++++<b>State Pattern Actor</b> - Labview COTS State Actor Framework library+++
+
++++<b>Engine</b>  JPL Base Software Framework for all components following the ancestry+++
+
+
++++This architecture drastically improves code-reuse, and reduces the amount of labor necessary to create ancestor classes.+++
+

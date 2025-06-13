@@ -1,0 +1,56 @@
+== Classes overview
+
+This project contains 1 classe and 0 interface.
+
+.Classes list
+[cols="", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Classes |Interfaces
+
+|<<Fault Handler.lvclass>>
+|
+|===
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "Fault Handler.lvlib:Fault Handler" {
+{field} -Active Alarms : kLVObjMCListbox
+{field} -Active Warnings : kLVObjMCListbox
+{field} -Faults Tab : kLVObjTabArrayTabControl
+{field} -Alarm Log : kLVObjString
+{field} -Warning Log : kLVObjString
+{field} -Alarm Report : NoType
+{field} -Warning Report : NoType
+{field} -Error State : Enum U16
+{field} -Automation : NoType
+{static} {method} +Add Automation reference()
+{static} {method} -Clear Errors()
+{static} {method} -Log Error Data()
+{static} {method} -Refresh Alarms()
+{static} {method} -Determine State()
+{static} {method} -Open Logs()
+{static} {method} -Terminate Automation()
+{static} {method} -Refresh Display()
+{static} {method} -Send Toggle Display()
+{static} {method} -Update System State()
+{static} {method} -Clear Warnings()
+{static} {method} -Log Warning Data()
+{static} {method} -Refresh Warnings()
+{static} {method} -Post Launch Init()
+{method} #Actor Core()
+
+}
+"Bottom Panel.lvlibp:Bottom" <|-- "Fault Handler.lvlib:Fault Handler"
+
+
+
+@enduml
+....

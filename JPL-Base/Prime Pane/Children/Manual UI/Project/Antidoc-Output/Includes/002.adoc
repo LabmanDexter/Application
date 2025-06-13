@@ -1,0 +1,146 @@
+== Classes overview
+
+This project contains 8 classes and 0 interface.
+
+.Classes list
+[cols="", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Classes |Interfaces
+
+|<<Change Active Instrument Msg.lvclass>>
+|
+
+|<<Close Instruments Msg.lvclass>>
+|
+
+|<<Launch Instruments Msg.lvclass>>
+|
+
+|<<Launch Subordinate and Add Msg.lvclass>>
+|
+
+|<<Query Instruments Msg.lvclass>>
+|
+
+|<<Reset Manual Layout Msg.lvclass>>
+|
+
+|<<Update Main State Msg.lvclass>>
+|
+
+|<<Manual UI.lvclass>>
+|
+|===
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "Manual UI.lvlib:Change Active Instrument Msg" {
+{field} -Identifier : String
+{field} -Panel : I32
+{static} {method} +Send Change Active Instrument()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Manual UI.lvlib:Change Active Instrument Msg"
+
+
+class "Manual UI.lvlib:Close Instruments Msg" {
+{static} {method} +Send Close Instruments()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Manual UI.lvlib:Close Instruments Msg"
+
+
+class "Manual UI.lvlib:Launch Instruments Msg" {
+{static} {method} +Send Launch Instruments()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Manual UI.lvlib:Launch Instruments Msg"
+
+
+class "Manual UI.lvlib:Launch Subordinate and Add Msg" {
+{field} -Identifier : String
+{field} -Panel Definiton : Cluster
+{static} {method} +Send Launch Subordinate and Add()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Manual UI.lvlib:Launch Subordinate and Add Msg"
+"Manual UI.lvlib:Launch Subordinate and Add Msg" *-- "Panel Manager.lvlibp:Panel Actor"
+"Manual UI.lvlib:Launch Subordinate and Add Msg" *-- "Panel.lvlibp:Panel"
+
+
+class "Manual UI.lvlib:Query Instruments Msg" {
+{field} -Instrument Notifier : NoType
+{static} {method} +Send Query Instruments()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Manual UI.lvlib:Query Instruments Msg"
+
+
+class "Manual UI.lvlib:Reset Manual Layout Msg" {
+{static} {method} +Send Reset Manual Layout()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Manual UI.lvlib:Reset Manual Layout Msg"
+
+
+class "Manual UI.lvlib:Update Main State Msg" {
+{field} -Loading : Boolean
+{static} {method} +Send Update Main State()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Manual UI.lvlib:Update Main State Msg"
+
+
+class "Manual UI.lvlib:Manual UI" {
+{field} -Splitters : Array of kLVObjSplitterBar
+{field} -Panels : Array of kLVObjSubPanel
+{field} -Subordinates : Array of Cluster
+{field} +Config : LV Class
+{field} -Splitter Positions : Array of I32
+{field} +Instruments : Array of Cluster
+{static} {method} +Change Active Instrument()
+{static} {method} +Close Instruments()
+{static} {method} +Launch Instruments()
+{static} {method} +Launch Subordinate and Add()
+{static} {method} +Query Instruments()
+{static} {method} +Update Main State()
+{static} {method} -Load Enabled Instrument List()
+{static} {method} -Load Instrument()
+{static} {method} -Add Subordinate()
+{static} {method} -Launch Subordinate()
+{static} {method} -Search for Subordinate()
+{static} {method} -Calculate Default Splitter Positions()
+{static} {method} -Default Splitter Positions()
+{static} {method} -Post Launch Init()
+{static} {method} -Pre Launch Support()
+{static} {method} -Shutdown()
+{method} +Reset Manual Layout()
+{method} #Actor Core()
+{method} #Pre Launch Init()
+{method} #Stop Core()
+
+}
+"Prime Panel.lvlibp:Prime Panel" <|-- "Manual UI.lvlib:Manual UI"
+"Manual UI.lvlib:Manual UI" *-- "Config.lvlibp:Config"
+
+"Manual UI.lvlib:Manual UI" o-- "Actor Framework.lvlibp:Message Enqueuer"
+"Manual UI.lvlib:Manual UI" o-- "Instruments.lvlibp:Instruments"
+
+
+@enduml
+....

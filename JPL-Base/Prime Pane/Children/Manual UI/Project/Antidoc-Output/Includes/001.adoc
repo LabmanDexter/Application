@@ -1,0 +1,40 @@
+== Manual UI.lvlib
+
+*Responsibility:*
++++This is the 10-Panel Manual User Interface.+++
++++It manages all of the installed & activated instruments, the panel in which they dock, the splitter positions, and responds to the <b>Manual Buttons</b> UI generated events.+++
+
+
+*Version:* 1.0.0.0
+
+.Nested libraries
+[cols="", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Name |Type
+
+|<<Change Active Instrument Msg.lvclass>>
+|LVClass
+
+|<<Close Instruments Msg.lvclass>>
+|LVClass
+
+|<<Launch Instruments Msg.lvclass>>
+|LVClass
+
+|<<Launch Subordinate and Add Msg.lvclass>>
+|LVClass
+
+|<<Query Instruments Msg.lvclass>>
+|LVClass
+
+|<<Reset Manual Layout Msg.lvclass>>
+|LVClass
+
+|<<Update Main State Msg.lvclass>>
+|LVClass
+
+|<<Manual UI.lvclass>>
+|LVClass
+|===
+
+This library has no functions set to non private scope.

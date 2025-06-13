@@ -1,0 +1,659 @@
+== Engine.lvclass
+
+*Responsibility:*
++++This is the library encapsulation for the base software's engine application.+++
+
++++Common methods, queue references, and event references are stored and accessible via this class. +++
+
++++This tool also manages event generation on it's encapsulated events/queues+++
+
+
+*Version:* 1.0.0.24
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "Engine.lvlib:Engine" {
+{field} +isRoot : Boolean
+{field} +Self Q : LV Class
+{field} +Caller Q : LV Class
+{field} -Application Directory : Path
+{field} +VI_Ref : kLVObjVI
+{field} +Events : Cluster
+{field} +Report Queue : LV Class
+{field} +Pedigree : Enum U16
+{static} {method} +Send Asynch Telemetry Descriptor Event()
+{static} {method} +Send Interface Command Event()
+{static} {method} +Send Telemetry Descriptor Event()
+{static} {method} +Send Launch Event()
+{static} {method} +Send QuickStart Event()
+{static} {method} +Send SafeBTE Event()
+{static} {method} +Send ToggleSupply Event()
+{static} {method} +Send UUTSupply Event()
+{static} {method} +Toggle Instrument Display()
+{static} {method} +Check for Errors()
+{static} {method} +Send Automation Event()
+{static} {method} +Send SystemStatus Event()
+{static} {method} +Send Operator_Name()
+{static} {method} +Send Pedigree()
+{static} {method} +Send Test_Name()
+{static} {method} +Send UUT_Name()
+{static} {method} +Send Witness_Name()
+{static} {method} -Create Event References()
+{static} {method} -Create New Report()
+{static} {method} -Setup()
+{method} +Reset Manual Layout()
+{method} +Adjust Splitter()
+{method} +Build Class()
+{method} +Toggle Component Display()
+{method} #Pre Launch Init()
+{method} #Substitute Actor()
+
+}
+"State Actor.lvlibp:State Actor" <|-- "Engine.lvlib:Engine"
+"Engine.lvlib:Engine" *-- "Actor Framework.lvlibp:Message Enqueuer"
+"Engine.lvlib:Engine" *-- "QDMH.lvlibp:QDMH"
+
+
+
+@enduml
+....
+
+.Functions
+[cols="<.<4d,<.<8a,<.<12d,<.<1a,<.<1a,<.<1a", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Name |Connector pane |Description |S. |R. |I.
+
+|Read Pedigree Val
+|image:Engine.lvlib_Engine.lvclass_Read_Pedigree_Val.vi.png[Engine.lvlib:Engine.lvclass:Read Pedigree Val.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Pedigree val
+|image:Engine.lvlib_Engine.lvclass_Write_Pedigree_val.vi.png[Engine.lvlib:Engine.lvclass:Write Pedigree val.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Directory
+|image:Engine.lvlib_Engine.lvclass_Read_Directory.vi.png[Engine.lvlib:Engine.lvclass:Read Directory.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Directory
+|image:Engine.lvlib_Engine.lvclass_Write_Directory.vi.png[Engine.lvlib:Engine.lvclass:Write Directory.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write isRoot
+|image:Engine.lvlib_Engine.lvclass_Write_isRoot.vi.png[Engine.lvlib:Engine.lvclass:Write isRoot.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Revision
+|image:Engine.lvlib_Engine.lvclass_Read_Revision.vi.png[Engine.lvlib:Engine.lvclass:Read Revision.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Read VI_Ref
+|image:Engine.lvlib_Engine.lvclass_Read_VI_Ref.vi.png[Engine.lvlib:Engine.lvclass:Read VI_Ref.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write VI_Ref
+|image:Engine.lvlib_Engine.lvclass_Write_VI_Ref.vi.png[Engine.lvlib:Engine.lvclass:Write VI_Ref.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read UUT_Designator
+|image:Engine.lvlib_Engine.lvclass_Read_UUT_Designator.vi.png[Engine.lvlib:Engine.lvclass:Read UUT_Designator.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write UUT_Designator
+|image:Engine.lvlib_Engine.lvclass_Write_UUT_Designator.vi.png[Engine.lvlib:Engine.lvclass:Write UUT_Designator.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Test_Name
+|image:Engine.lvlib_Engine.lvclass_Read_Test_Name.vi.png[Engine.lvlib:Engine.lvclass:Read Test_Name.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Test_Name
+|image:Engine.lvlib_Engine.lvclass_Write_Test_Name.vi.png[Engine.lvlib:Engine.lvclass:Write Test_Name.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Test_Operator
+|image:Engine.lvlib_Engine.lvclass_Read_Test_Operator.vi.png[Engine.lvlib:Engine.lvclass:Read Test_Operator.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Test_Operator
+|image:Engine.lvlib_Engine.lvclass_Write_Test_Operator.vi.png[Engine.lvlib:Engine.lvclass:Write Test_Operator.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Test_Witness
+|image:Engine.lvlib_Engine.lvclass_Read_Test_Witness.vi.png[Engine.lvlib:Engine.lvclass:Read Test_Witness.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Test_Witness
+|image:Engine.lvlib_Engine.lvclass_Write_Test_Witness.vi.png[Engine.lvlib:Engine.lvclass:Write Test_Witness.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Pedigree
+|image:Engine.lvlib_Engine.lvclass_Read_Pedigree.vi.png[Engine.lvlib:Engine.lvclass:Read Pedigree.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Pedigree
+|image:Engine.lvlib_Engine.lvclass_Write_Pedigree.vi.png[Engine.lvlib:Engine.lvclass:Write Pedigree.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read QuickStart Event
+|image:Engine.lvlib_Engine.lvclass_Read_QuickStart_Event.vi.png[Engine.lvlib:Engine.lvclass:Read QuickStart Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write QuickStart Event
+|image:Engine.lvlib_Engine.lvclass_Write_QuickStart_Event.vi.png[Engine.lvlib:Engine.lvclass:Write QuickStart Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read SafeBTE Event
+|image:Engine.lvlib_Engine.lvclass_Read_SafeBTE_Event.vi.png[Engine.lvlib:Engine.lvclass:Read SafeBTE Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write SafeBTE Event
+|image:Engine.lvlib_Engine.lvclass_Write_SafeBTE_Event.vi.png[Engine.lvlib:Engine.lvclass:Write SafeBTE Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read TogglePower Event
+|image:Engine.lvlib_Engine.lvclass_Read_TogglePower_Event.vi.png[Engine.lvlib:Engine.lvclass:Read TogglePower Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write TogglePower Event
+|image:Engine.lvlib_Engine.lvclass_Write_TogglePower_Event.vi.png[Engine.lvlib:Engine.lvclass:Write TogglePower Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read UUTSupply Event
+|image:Engine.lvlib_Engine.lvclass_Read_UUTSupply_Event.vi.png[Engine.lvlib:Engine.lvclass:Read UUTSupply Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write UUTSupply Event
+|image:Engine.lvlib_Engine.lvclass_Write_UUTSupply_Event.vi.png[Engine.lvlib:Engine.lvclass:Write UUTSupply Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Change Instrument Event
+|image:Engine.lvlib_Engine.lvclass_Read_Change_Instrument_Event.vi.png[Engine.lvlib:Engine.lvclass:Read Change Instrument Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Change Instrument Event
+|image:Engine.lvlib_Engine.lvclass_Write_Change_Instrument_Event.vi.png[Engine.lvlib:Engine.lvclass:Write Change Instrument Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Toggle Launch Event
+|image:Engine.lvlib_Engine.lvclass_Read_Toggle_Launch_Event.vi.png[Engine.lvlib:Engine.lvclass:Read Toggle Launch Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Toggle Launch Event
+|image:Engine.lvlib_Engine.lvclass_Write_Toggle_Launch_Event.vi.png[Engine.lvlib:Engine.lvclass:Write Toggle Launch Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Fault Event
+|image:Engine.lvlib_Engine.lvclass_Read_Fault_Event.vi.png[Engine.lvlib:Engine.lvclass:Read Fault Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Fault Event
+|image:Engine.lvlib_Engine.lvclass_Write_Fault_Event.vi.png[Engine.lvlib:Engine.lvclass:Write Fault Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read SystemStatus Event
+|image:Engine.lvlib_Engine.lvclass_Read_SystemStatus_Event.vi.png[Engine.lvlib:Engine.lvclass:Read SystemStatus Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write SystemStatus Event
+|image:Engine.lvlib_Engine.lvclass_Write_SystemStatus_Event.vi.png[Engine.lvlib:Engine.lvclass:Write SystemStatus Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Automation
+|image:Engine.lvlib_Engine.lvclass_Read_Automation.vi.png[Engine.lvlib:Engine.lvclass:Read Automation.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Automation
+|image:Engine.lvlib_Engine.lvclass_Write_Automation.vi.png[Engine.lvlib:Engine.lvclass:Write Automation.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Interface_Command Event
+|image:Engine.lvlib_Engine.lvclass_Read_Interface_Command_Event.vi.png[Engine.lvlib:Engine.lvclass:Read Interface_Command Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Interface_Command Event
+|image:Engine.lvlib_Engine.lvclass_Write_Interface_Command_Event.vi.png[Engine.lvlib:Engine.lvclass:Write Interface_Command Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Telemetry_Descriptor
+|image:Engine.lvlib_Engine.lvclass_Read_Telemetry_Descriptor.vi.png[Engine.lvlib:Engine.lvclass:Read Telemetry_Descriptor.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Telemetry_Descriptor
+|image:Engine.lvlib_Engine.lvclass_Write_Telemetry_Descriptor.vi.png[Engine.lvlib:Engine.lvclass:Write Telemetry_Descriptor.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Asynch Telemetry_Descriptor
+|image:Engine.lvlib_Engine.lvclass_Read_Asynch_Telemetry_Descriptor.vi.png[Engine.lvlib:Engine.lvclass:Read Asynch Telemetry_Descriptor.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Asynch_Telemetry_Descriptor
+|image:Engine.lvlib_Engine.lvclass_Write_Asynch_Telemetry_Descriptor.vi.png[Engine.lvlib:Engine.lvclass:Write Asynch_Telemetry_Descriptor.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Events
+|image:Engine.lvlib_Engine.lvclass_Read_Events.vi.png[Engine.lvlib:Engine.lvclass:Read Events.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Events
+|image:Engine.lvlib_Engine.lvclass_Write_Events.vi.png[Engine.lvlib:Engine.lvclass:Write Events.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Caller Q
+|image:Engine.lvlib_Engine.lvclass_Read_Caller_Q.vi.png[Engine.lvlib:Engine.lvclass:Read Caller Q.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Self Q
+|image:Engine.lvlib_Engine.lvclass_Read_Self_Q.vi.png[Engine.lvlib:Engine.lvclass:Read Self Q.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Report Queue
+|image:Engine.lvlib_Engine.lvclass_Read_Report_Queue.vi.png[Engine.lvlib:Engine.lvclass:Read Report Queue.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Report Queue
+|image:Engine.lvlib_Engine.lvclass_Write_Report_Queue.vi.png[Engine.lvlib:Engine.lvclass:Write Report Queue.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Send Asynch Telemetry Descriptor Event
+|image:Engine.lvlib_Engine.lvclass_Send_Asynch_Telemetry_Descriptor_Event.vi.png[Engine.lvlib:Engine.lvclass:Send Asynch Telemetry Descriptor Event.vi]
+|+++This routine transmits an asynchronous telemetry descriptor event. Ancestor classes are responsible for determining whether or not they are the legal target and if the variant is well formed.+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Send Interface Command Event
+|image:Engine.lvlib_Engine.lvclass_Send_Interface_Command_Event.vi.png[Engine.lvlib:Engine.lvclass:Send Interface Command Event.vi]
+|+++This routine allows ancestor classes to transmit commands laterally without relying on the actor upsream/downstream relationship (ultimately speeding up data transfer mechanics). The generator and receiver are responsible for verifying the construction of the variant data is correct.+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Send Telemetry Descriptor Event
+|image:Engine.lvlib_Engine.lvclass_Send_Telemetry_Descriptor_Event.vi.png[Engine.lvlib:Engine.lvclass:Send Telemetry Descriptor Event.vi]
+|+++This routine transmits an telemetry descriptor event. Ancestor classes are responsible for determining whether or not they are the legal target and if the variant is well formed.+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Send Launch Event
+|image:Engine.lvlib_Engine.lvclass_Send_Launch_Event.vi.png[Engine.lvlib:Engine.lvclass:Send Launch Event.vi]
+|+++Event used to trigger launch instructions from the Main UI to the Manual UI+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Send QuickStart Event
+|image:Engine.lvlib_Engine.lvclass_Send_QuickStart_Event.vi.png[Engine.lvlib:Engine.lvclass:Send QuickStart Event.vi]
+|+++Placeholder event not used+++
+
++++Theory behind this is to trigger:+++
++++1. Power Off via ToggleSupplyEvent =0+++
++++2. Set downstream devices to a nominal configuration by transmitting SafeBTEEvent+++
++++3. Power On via a Toggle SupplyEvent ==0+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Send SafeBTE Event
+|image:Engine.lvlib_Engine.lvclass_Send_SafeBTE_Event.vi.png[Engine.lvlib:Engine.lvclass:Send SafeBTE Event.vi]
+|+++Placeholder event not used+++
+
++++Theory behind this is to transmit a SafeBTE Event ==0.  Downstream Devices will consume the event by setting a safe configuration if the event value == target device, and then generate a new SafeBTE event where the value is incremented +1.  +++
+
++++The idea is to control safeing sequences with a single event.+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Send ToggleSupply Event
+|image:Engine.lvlib_Engine.lvclass_Send_ToggleSupply_Event.vi.png[Engine.lvlib:Engine.lvclass:Send ToggleSupply Event.vi]
+|+++Placeholder event not used+++
+
++++Theory behind this is to transmit a Toggle Supply Event ==0.  Downstream power supplies will consume the event by powering off if the event value == target power supply, and then generate a new supply event where the value is incremented +1.  +++
+
++++The idea is to control power on and power off sequences with a single event.+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Send UUTSupply Event
+|image:Engine.lvlib_Engine.lvclass_Send_UUTSupply_Event.vi.png[Engine.lvlib:Engine.lvclass:Send UUTSupply Event.vi]
+|+++Generate an event consumed by the Chronometer to track devices that are powered on or off. +++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Toggle Instrument Display
+|image:Engine.lvlib_Engine.lvclass_Toggle_Instrument_Display.vi.png[Engine.lvlib:Engine.lvclass:Toggle Instrument Display.vi]
+|+++<b>override</b> Function to instruct instruments to dock and undock from a user interface panel.+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Check for Errors
+|image:Engine.lvlib_Engine.lvclass_Check_for_Errors.vi.png[Engine.lvlib:Engine.lvclass:Check for Errors.vi]
+|+++This routine checks incoming error terminals and relays an error event to the fault handler if there is an error, removing the error from the terminal and allowing the software to continue executing+++
+
++++*This VI will allow the error to pass through if the original error event was not created.+++
+
+|image:empty.png[empty.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Send Automation Event
+|image:Engine.lvlib_Engine.lvclass_Send_Automation_Event.vi.png[Engine.lvlib:Engine.lvclass:Send Automation Event.vi]
+|+++This allows TestStand to send a calling sequence reference in to the software.  Ultimately, this allows any faults generated by the software to report up to TestStand to halt/abort testing.+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Send SystemStatus Event
+|image:Engine.lvlib_Engine.lvclass_Send_SystemStatus_Event.vi.png[Engine.lvlib:Engine.lvclass:Send SystemStatus Event.vi]
+|+++This Event handler sends error, warning, or nominal status events to the main application.  +++
+
++++The flow of these events is handled by a fault handler utility+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Send Operator_Name
+|image:Engine.lvlib_Engine.lvclass_Send_Operator_Name.vi.png[Engine.lvlib:Engine.lvclass:Send Operator_Name.vi]
+|+++Trigger the Update Operator Name Event (allowing components to update any references to the operator name)+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Send Pedigree
+|image:Engine.lvlib_Engine.lvclass_Send_Pedigree.vi.png[Engine.lvlib:Engine.lvclass:Send Pedigree.vi]
+|+++Trigger the Update Pedigree Event (allowing components to update any references to the Pedigree)+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Send Test_Name
+|image:Engine.lvlib_Engine.lvclass_Send_Test_Name.vi.png[Engine.lvlib:Engine.lvclass:Send Test_Name.vi]
+|+++Trigger the Update Test Name Event (allowing components to update any references to the Test name).+++
+
++++Then enqueue a close and open operation to the report generator. (ensuring reports are generated with association to the name of the test)+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Send UUT_Name
+|image:Engine.lvlib_Engine.lvclass_Send_UUT_Name.vi.png[Engine.lvlib:Engine.lvclass:Send UUT_Name.vi]
+|+++Trigger the Update UUT Name Event (allowing components to update any references to the UUT name)+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Send Witness_Name
+|image:Engine.lvlib_Engine.lvclass_Send_Witness_Name.vi.png[Engine.lvlib:Engine.lvclass:Send Witness_Name.vi]
+|+++Trigger the Update Witness Name Event (allowing components to update any references to the witness name)+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Reset Manual Layout
+|image:Engine.lvlib_Engine.lvclass_Reset_Manual_Layout.vi.png[Engine.lvlib:Engine.lvclass:Reset Manual Layout.vi]
+|+++This <b>override</b> routine allows components to adjust their splitters to their default position +++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Adjust Splitter
+|image:Engine.lvlib_Engine.lvclass_Adjust_Splitter.vi.png[Engine.lvlib:Engine.lvclass:Adjust Splitter.vi]
+|+++This override VI allows ancestor classes to appropriately move splitter positions so the UI fits within the designated pane.+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Build Class
+|image:Engine.lvlib_Engine.lvclass_Build_Class.vi.png[Engine.lvlib:Engine.lvclass:Build Class.vi]
+|+++<b>Build Class</b>+++
++++Pre-populate the called class with universally accessible references/variables+++
+
++++<b>Engine</b> Packs:+++
++++          Application Directory+++
++++          Event References+++
++++          Report Queue+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Toggle Component Display
+|image:Engine.lvlib_Engine.lvclass_Toggle_Component_Display.vi.png[Engine.lvlib:Engine.lvclass:Toggle Component Display.vi]
+|+++This routine changes which device is docked in a particular pane at any given time.+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Pre Launch Init
+|image:Engine.lvlib_Engine.lvclass_Pre_Launch_Init.vi.png[Engine.lvlib:Engine.lvclass:Pre Launch Init.vi]
+|+++This routine determines if the instance calling the function is the root actor.  +++
++++<b>Root Actor </b> reads its self-enqueuer in to private data+++
+
++++<b>Nested Actor</b> reads its self-enqueuer and the caller enqueuer in to private data+++
+
+|image:scope-protected.png[scope-protected.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Substitute Actor
+|image:Engine.lvlib_Engine.lvclass_Substitute_Actor.vi.png[Engine.lvlib:Engine.lvclass:Substitute Actor.vi]
+|+++This method copies information from the <b>Current Actor</b> to the <b>Substitute Actor</b>, including the to-self and the to-caller queue references. The purpose of this function is to allow an actor to define a method that replaces itself with another actor, useful for implementing a State Pattern Actor. Child classes should override this method to copy any additional fields that they need from the current to the substitute.+++
+
++++This method may return error code 678010: Illegal substitution. Overrides of this method may choose to return this error if the new actor is not one that is an appropriate substitute for the current actor, for whatever standards of "appropriate" are chosen for the current actor. If returning an error, override VIs should return the unmodified <b>Current Actor</b> as <b>Substitute Actor out</b>.+++
+
+|image:scope-protected.png[scope-protected.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Create Event References
+|image:Engine.lvlib_Engine.lvclass_Create_Event_References.vi.png[Engine.lvlib:Engine.lvclass:Create Event References.vi]
+|+++This routine creates events references. It should only be called when the initialization being performed is the root actor. (<b>IsRoot == TRUE</b>)+++
+
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Create New Report
+|image:Engine.lvlib_Engine.lvclass_Create_New_Report.vi.png[Engine.lvlib:Engine.lvclass:Create New Report.vi]
+|+++This routine enqueues a close operation followed by an open operation on the report QDMH. This guarantees that the instructions are processed in order, without interruption.+++
+
++++The queue consumer (report generator) is responsible for acting on the instruction set.+++
+
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Setup
+|image:Engine.lvlib_Engine.lvclass_Setup.vi.png[Engine.lvlib:Engine.lvclass:Setup.vi]
+|+++Part of the instantiation process for every ancestor class. This routine interrogates the IsRoot Flag.+++
+
++++If this is the root actor, it reads its self enqueuer to memoury+++
+
++++If this is a nested actor, it reads its self enqueuer and the caller enqueuer to memory+++
+
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|===
+
+**S**cope: image:scope-protected.png[] -> Protected | image:scope-community.png[] -> Community | image:scope-private.png[] -> Private
+
+**R**eentrancy: image:reentrancy-preallocated.png[] -> Preallocated reentrancy | image:reentrancy-shared.png[] -> Shared reentrancy
+
+**I**nlining: image:inlined.png[] -> Inlined

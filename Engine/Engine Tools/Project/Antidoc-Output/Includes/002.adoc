@@ -1,0 +1,96 @@
+== Classes overview
+
+This project contains 1 classe and 0 interface.
+
+.Classes list
+[cols="", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Classes |Interfaces
+
+|<<Engine.lvclass>>
+|
+|===
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "Engine.lvlib:Adjust Splitter Msg" {
+{field} -Splitter Info : Cluster
+{field} -Show : Boolean
+{static} {method} +Send Adjust Splitter()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Engine.lvlib:Adjust Splitter Msg"
+
+
+class "Engine.lvlib:Toggle Component Display Msg" {
+{field} -Identifier : String
+{field} -Show : Boolean
+{static} {method} +Send Toggle Component Display()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Engine.lvlib:Toggle Component Display Msg"
+
+
+class "Engine.lvlib:Reset Manual Layout Msg" {
+{static} {method} +Send Reset Manual Layout()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Engine.lvlib:Reset Manual Layout Msg"
+
+
+class "Engine.lvlib:Engine" {
+{field} +isRoot : Boolean
+{field} +Self Q : LV Class
+{field} +Caller Q : LV Class
+{field} -Application Directory : Path
+{field} +VI_Ref : kLVObjVI
+{field} +Events : Cluster
+{field} +Report Queue : LV Class
+{field} +Pedigree : Enum U16
+{static} {method} +Send Asynch Telemetry Descriptor Event()
+{static} {method} +Send Interface Command Event()
+{static} {method} +Send Telemetry Descriptor Event()
+{static} {method} +Send Launch Event()
+{static} {method} +Send QuickStart Event()
+{static} {method} +Send SafeBTE Event()
+{static} {method} +Send ToggleSupply Event()
+{static} {method} +Send UUTSupply Event()
+{static} {method} +Toggle Instrument Display()
+{static} {method} +Check for Errors()
+{static} {method} +Send Automation Event()
+{static} {method} +Send SystemStatus Event()
+{static} {method} +Send Operator_Name()
+{static} {method} +Send Pedigree()
+{static} {method} +Send Test_Name()
+{static} {method} +Send UUT_Name()
+{static} {method} +Send Witness_Name()
+{static} {method} -Create Event References()
+{static} {method} -Create New Report()
+{static} {method} -Setup()
+{method} +Reset Manual Layout()
+{method} +Adjust Splitter()
+{method} +Build Class()
+{method} +Toggle Component Display()
+{method} #Pre Launch Init()
+{method} #Substitute Actor()
+
+}
+"State Actor.lvlibp:State Actor" <|-- "Engine.lvlib:Engine"
+"Engine.lvlib:Engine" *-- "Actor Framework.lvlibp:Message Enqueuer"
+"Engine.lvlib:Engine" *-- "QDMH.lvlibp:QDMH"
+
+
+
+@enduml
+....

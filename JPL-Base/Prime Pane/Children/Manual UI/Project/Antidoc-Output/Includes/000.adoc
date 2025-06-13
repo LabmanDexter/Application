@@ -1,0 +1,5 @@
+== Project description
+
++++This is the 10-Panel Manual User Interface.+++
++++It manages all of the installed & activated instruments, the panel in which they dock, the splitter positions, and responds to the <b>Manual Buttons</b> UI generated events.+++
+
