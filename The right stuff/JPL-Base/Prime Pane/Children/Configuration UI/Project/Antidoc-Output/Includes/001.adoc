@@ -1,0 +1,33 @@
+== Configuration UI.lvlib
+
+*Responsibility:*
++++The configuration user interface provides a means to edit the config.ini file in a more user-friendly format than editing the .ini file manually.+++
+
+
+*Version:* 1.0.0.0
+
+.Nested libraries
+[cols="", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Name |Type
+
+|<<Reset Msg.lvclass>>
+|LVClass
+
+|<<Add Device Msg.lvclass>>
+|LVClass
+
+|<<Save Keys Msg.lvclass>>
+|LVClass
+
+|<<Select Instrument Msg.lvclass>>
+|LVClass
+
+|<<Remove Device Msg.lvclass>>
+|LVClass
+
+|<<Configuration UI.lvclass>>
+|LVClass
+|===
+
+This library has no functions set to non private scope.

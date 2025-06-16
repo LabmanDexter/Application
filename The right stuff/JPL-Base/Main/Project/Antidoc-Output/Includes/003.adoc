@@ -1,0 +1,166 @@
+== Classes overview
+
+This project contains 1 classe and 0 interface.
+
+.Classes list
+[cols="", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Classes |Interfaces
+
+|<<Base Software.lvclass>>
+|
+|===
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "Base Software.lvlib:Main.lvlib:Automation Update Test Name Msg" {
+{field} -Test Name : String
+{static} {method} +Send Automation Update Test Name()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Base Software.lvlib:Main.lvlib:Automation Update Test Name Msg"
+
+
+class "Base Software.lvlib:Main.lvlib:Process Test Name Event Msg" {
+{field} -TestName : String
+{static} {method} +Send Process Test Name Event()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Base Software.lvlib:Main.lvlib:Process Test Name Event Msg"
+
+
+class "Base Software.lvlib:Main.lvlib:Query Instruments Msg" {
+{field} -Instrument Notifier : NoType
+{static} {method} +Send Query Instruments()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Base Software.lvlib:Main.lvlib:Query Instruments Msg"
+
+
+class "Base Software.lvlib:Main.lvlib:Query UUT Details Msg" {
+{field} -Name_Request : NoType
+{static} {method} +Send Query UUT Details()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Base Software.lvlib:Main.lvlib:Query UUT Details Msg"
+
+
+class "Base Software.lvlib:Main.lvlib:Respond to Menu Event Msg" {
+{field} -Selection : String
+{static} {method} +Send Respond to Menu Event()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Base Software.lvlib:Main.lvlib:Respond to Menu Event Msg"
+
+
+class "Base Software.lvlib:Main.lvlib:Show Splash Screen Msg" {
+{static} {method} +Send Show Splash Screen()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Base Software.lvlib:Main.lvlib:Show Splash Screen Msg"
+
+
+class "Base Software.lvlib:Main.lvlib:Update Automation Reference Msg" {
+{field} -Automation : Variant
+{static} {method} +Send Update Automation Reference()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Base Software.lvlib:Main.lvlib:Update Automation Reference Msg"
+
+
+class "Base Software.lvlib:Main.lvlib:Update System Status Msg" {
+{field} -System_Status : Enum U16
+{static} {method} +Send Update System Status()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Base Software.lvlib:Main.lvlib:Update System Status Msg"
+
+
+class "Base Software.lvlib:Main.lvlib:Base Software" {
+{field} -Subordinates : Array of Cluster
+{field} +Splitters : Array of Cluster
+{field} -System_Status : Enum U16
+{field} -Pedigree : Array of String
+{field} -Models : Array of String
+{field} -Configuration : LV Class
+{field} -Automation : Boolean
+{field} -Manual : Boolean
+{field} +Logged_On : Boolean
+{field} +UUT_Info : Boolean
+{field} -Error : Boolean
+{field} -Warning : Boolean
+{field} +Previous State : Enum U16
+{field} +State : Enum U16
+{field} -References : Cluster
+{static} {method} +Login()
+{static} {method} +Manual()
+{static} {method} +Automation Update Test Name()
+{static} {method} +Query Instruments()
+{static} {method} +Query UUT Details()
+{static} {method} +Update Automation Reference()
+{static} {method} +Launch Main()
+{static} {method} +Launch Subordinate and Add()
+{static} {method} +Process Test Name Event()
+{static} {method} +Respond to Menu Event()
+{static} {method} +Show Splash Screen()
+{static} {method} +Update System Status()
+{static} {method} -Update Test Name()
+{static} {method} -Log On()
+{static} {method} -Update Model Serial()
+{static} {method} -Launch Chronometer()
+{static} {method} -Launch Configuration UI()
+{static} {method} -Launch Debugger()
+{static} {method} -Launch Fault Monitor()
+{static} {method} -Launch Manual Buttons()
+{static} {method} -Launch Manual UI()
+{static} {method} -Launch Report Generator()
+{static} {method} -Launch Report Viewer UI()
+{static} {method} -Create Events()
+{static} {method} -Create Report Queue()
+{static} {method} -Launch Subordinates()
+{static} {method} -Reset Instruments()
+{static} {method} -Add Subordinate()
+{static} {method} -Launch Subordinate()
+{static} {method} -Search for Subordinate()
+{static} {method} -Pull GUI References()
+{static} {method} -Idle Logic()
+{static} {method} -Manual Enabled()
+{static} {method} -Refresh Controls()
+{static} {method} -Refresh State()
+{static} {method} -Indicator_Color()
+{static} {method} -Set UUT Name()
+{static} {method} -Show Mission Screen()
+{static} {method} -Initialize()
+{static} {method} -Post Launch Init()
+{static} {method} -Shutdown()
+{method} +Toggle Component Display()
+{method} #Actor Core()
+{method} #Pre Launch Init()
+{method} +Reset Manual Layout()
+{method} #Stop Core()
+
+}
+"Engine.lvlibp:Engine" <|-- "Base Software.lvlib:Main.lvlib:Base Software"
+"Base Software.lvlib:Main.lvlib:Base Software" *-- "Config.lvlibp:Config"
+
+"Base Software.lvlib:Main.lvlib:Base Software" o-- "Actor Framework.lvlibp:Message Enqueuer"
+
+
+@enduml
+....

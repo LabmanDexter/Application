@@ -1,0 +1,204 @@
+== Configuration UI.lvclass
+
+*Responsibility:*
++++The configuration user interface provides a means to edit the config.ini file in a more user-friendly format than editing the .ini file manually.+++
+
+
+*Version:* 1.0.0.5
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "Configuration UI.lvlib:Configuration UI" {
+{field} +Instrument Listbox : kLVObjListBox
+{field} +Keys Refnum : kLVObjMCListbox
+{field} +Signal Refnum : kLVObjMCListbox
+{field} +Config : LV Class
+{static} {method} +Select Instrument()
+{static} {method} +Add Device()
+{static} {method} +Remove Device()
+{static} {method} +Reset()
+{static} {method} +Save Keys()
+{static} {method} -Load Configuration()
+{static} {method} -Load Required Keys()
+{static} {method} -Refresh UI()
+{method} #Actor Core()
+
+}
+"Prime Panel.lvlibp:Prime Panel" <|-- "Configuration UI.lvlib:Configuration UI"
+"Configuration UI.lvlib:Configuration UI" *-- "Config.lvlibp:Config"
+
+
+
+@enduml
+....
+
+.Functions
+[cols="<.<4d,<.<8a,<.<12d,<.<1a,<.<1a,<.<1a", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Name |Connector pane |Description |S. |R. |I.
+
+|Read Config
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Read_Config.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Read Config.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Config
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Write_Config.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Write Config.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Instrument Listbox
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Read_Instrument_Listbox.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Read Instrument Listbox.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Instrument Listbox
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Write_Instrument_Listbox.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Write Instrument Listbox.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Select Instrument
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Select_Instrument.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Select Instrument.vi]
+|+++Using the <b>selected</b> index +++
++++1. Access the configuration keys for the specific device +++
++++2. Write the Key Names and Key Values to the Keys Multicolumn Listbox +++
++++3. Access the signal defintions for the specific device+++
++++4. Write the Signal Headers and Values to the multicolumn listbox+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Read Keys Refnum
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Read_Keys_Refnum.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Read Keys Refnum.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Keys Refnum
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Write_Keys_Refnum.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Write Keys Refnum.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Signal Refnum
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Read_Signal_Refnum.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Read Signal Refnum.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Signal Refnum
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Write_Signal_Refnum.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Write Signal Refnum.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Add Device
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Add_Device.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Add Device.vi]
+|+++This routine +++
++++1. Prompts the user to select a device to add to the configuration by calling <b>Config:New Device Dialog</b>+++
++++2. Loads the required keys by calling <b>Load Required Keys</b> +++
++++3. Updates the GUI to show the required configuration keys by calling <b>Refresh Display</b> +++
++++4. Saves the new record to config.ini by calling <b>Save Keys</b> +++
++++5. Calls <b>Select Instrument</b>, choosing the new device to ensure that the config.ini file has been updated with the new record+++
++++6. Calls <b>Engine:Check for Error</b> to confirm no errors occurred.+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Remove Device
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Remove_Device.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Remove Device.vi]
+|+++This routine:+++
++++1. Deletes the instrument record by calling <b>Config:Delete Instrument Record</b>+++
++++2. Refreshes the display by calling <b>Refresh Display</b>+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Reset
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Reset.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Reset.vi]
+|+++Call <b>Select Instrument</b> index 0+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Save Keys
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Save_Keys.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Save Keys.vi]
+|+++Save all configuration key values from the editor window to the currently selected instrument to config.ini+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Actor Core
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Actor_Core.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Actor Core.vi]
+|+++This is the user interface panel to edit the config.ini file.+++
+
+|image:scope-protected.png[scope-protected.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Load Configuration
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Load_Configuration.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Load Configuration.vi]
+|+++This routine loads the config.ini file to memory, guaranteeing that at the start of the program the GUI matches the config.ini values.+++
+
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Load Required Keys
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Load_Required_Keys.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Load Required Keys.vi]
+|+++Open an instance of the instrument type selected to create, call config's <b>Read Required Keys</b> which returns all of the requisite configuration keys and pre-sets the class configuration key to the specific instrument class selected.+++
+
++++This allows the user to create a well-formed configuration entry in config.ini for the instrument.+++
+
++++<b>***CAUTION***</b>+++
+
++++The signal list does not currently have this feature, so the instrument class data needs to be inspected to create a well-formed signal list entry for full configuration mapping.+++
+
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Refresh UI
+|image:Configuration_UI.lvlib_Configuration_UI.lvclass_Refresh_UI.vi.png[Configuration UI.lvlib:Configuration UI.lvclass:Refresh UI.vi]
+|+++Reload the configuration file (ensuring the GUI matches the config.ini file data)+++
+
++++Read the complete list of devices defined in config.ini and update the Instruments listbox +++
++++- This allows the user to select defined instruments from the listbox+++
+
++++If an active device is already selected, make sure that item is selected in the listbox.+++
+
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|===
+
+**S**cope: image:scope-protected.png[] -> Protected | image:scope-community.png[] -> Community | image:scope-private.png[] -> Private
+
+**R**eentrancy: image:reentrancy-preallocated.png[] -> Preallocated reentrancy | image:reentrancy-shared.png[] -> Shared reentrancy
+
+**I**nlining: image:inlined.png[] -> Inlined

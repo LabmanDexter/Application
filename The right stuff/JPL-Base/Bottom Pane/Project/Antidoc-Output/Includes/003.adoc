@@ -1,0 +1,64 @@
+== Bottom.lvclass
+
+*Responsibility:*
++++The bottom panel class is an abstraction layer for any panel that should be docked in the bottom pane of the Main UI for JPL Base Software.   By defintion, abstraction layers only perform basic functions that are expected to be common amongst all of the children classes.  The bottom pane currently houses message definitions for subordinate classes as follows:+++
+
++++1.  Override Function:  Adjust Splitter Position.  Main UI uses splitters to define regions where user interfaces will be housed.  This utility instructs the Main UI to re-position the splitter supressing the bottom pane to its normal (hidden) position at the bounds of the monitor's lower resolution, or to its active (shown) position [height] pixels above the monitor's lower boundary.  This ensures sufficient space for user interaction when the bottom panel is active, and optimum UI space when the bottom panel is inactive.+++
+
+
+*Version:* 1.0.0.6
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "Bottom.lvlib:Bottom" {
+{method} #Actor Core()
+{method} +Adjust Splitter()
+
+}
+"Engine.lvlibp:Engine" <|-- "Bottom.lvlib:Bottom"
+
+
+
+@enduml
+....
+
+.Functions (non private scope only)
+[cols="<.<4d,<.<8a,<.<12d,<.<1a,<.<1a,<.<1a", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Name |Connector pane |Description |S. |R. |I.
+
+|Actor Core
+|image:Bottom.lvlib_Bottom.lvclass_Actor_Core.vi.png[Bottom.lvlib:Bottom.lvclass:Actor Core.vi]
+|+++The bottom panel actor is an abstraction that provides the actor framework panel size definitions.+++
+
+|image:scope-protected.png[scope-protected.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Adjust Splitter
+|image:Bottom.lvlib_Bottom.lvclass_Adjust_Splitter.vi.png[Bottom.lvlib:Bottom.lvclass:Adjust Splitter.vi]
+|+++The Adjust Splitter overrides the <b>Engine</b> Adjust Splitter routine.+++
+
++++Using the boundary definitions of the bottom panel actor, and the pointer to the splitter, this routine commands the splitter to:+++
+
++++<b>Show = TRUE</b>  Move the splitter up from the bottom of the screen+++
++++ <b>Show = FALSE</b>  Return the  splitter to the bottom of the screen +++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|===
+
+**S**cope: image:scope-protected.png[] -> Protected | image:scope-community.png[] -> Community
+
+**R**eentrancy: image:reentrancy-preallocated.png[] -> Preallocated reentrancy | image:reentrancy-shared.png[] -> Shared reentrancy
+
+**I**nlining: image:inlined.png[] -> Inlined

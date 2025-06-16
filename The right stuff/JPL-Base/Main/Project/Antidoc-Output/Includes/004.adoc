@@ -1,0 +1,662 @@
+== Base Software.lvclass
+
+*Responsibility:*
+No description found (add content in lvclass description)
+
+*Version:* 1.0.0.31
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "Base Software.lvlib:Main.lvlib:Base Software" {
+{field} -Subordinates : Array of Cluster
+{field} +Splitters : Array of Cluster
+{field} -System_Status : Enum U16
+{field} -Pedigree : Array of String
+{field} -Models : Array of String
+{field} -Configuration : LV Class
+{field} -Automation : Boolean
+{field} -Manual : Boolean
+{field} +Logged_On : Boolean
+{field} +UUT_Info : Boolean
+{field} -Error : Boolean
+{field} -Warning : Boolean
+{field} +Previous State : Enum U16
+{field} +State : Enum U16
+{field} -References : Cluster
+{static} {method} +Login()
+{static} {method} +Manual()
+{static} {method} +Automation Update Test Name()
+{static} {method} +Query Instruments()
+{static} {method} +Query UUT Details()
+{static} {method} +Update Automation Reference()
+{static} {method} +Launch Main()
+{static} {method} +Launch Subordinate and Add()
+{static} {method} +Process Test Name Event()
+{static} {method} +Respond to Menu Event()
+{static} {method} +Show Splash Screen()
+{static} {method} +Update System Status()
+{static} {method} -Update Test Name()
+{static} {method} -Log On()
+{static} {method} -Update Model Serial()
+{static} {method} -Launch Chronometer()
+{static} {method} -Launch Configuration UI()
+{static} {method} -Launch Debugger()
+{static} {method} -Launch Fault Monitor()
+{static} {method} -Launch Manual Buttons()
+{static} {method} -Launch Manual UI()
+{static} {method} -Launch Report Generator()
+{static} {method} -Launch Report Viewer UI()
+{static} {method} -Create Events()
+{static} {method} -Create Report Queue()
+{static} {method} -Launch Subordinates()
+{static} {method} -Reset Instruments()
+{static} {method} -Add Subordinate()
+{static} {method} -Launch Subordinate()
+{static} {method} -Search for Subordinate()
+{static} {method} -Pull GUI References()
+{static} {method} -Idle Logic()
+{static} {method} -Manual Enabled()
+{static} {method} -Refresh Controls()
+{static} {method} -Refresh State()
+{static} {method} -Indicator_Color()
+{static} {method} -Set UUT Name()
+{static} {method} -Show Mission Screen()
+{static} {method} -Initialize()
+{static} {method} -Post Launch Init()
+{static} {method} -Shutdown()
+{method} +Toggle Component Display()
+{method} #Actor Core()
+{method} #Pre Launch Init()
+{method} +Reset Manual Layout()
+{method} #Stop Core()
+
+}
+"Engine.lvlibp:Engine" <|-- "Base Software.lvlib:Main.lvlib:Base Software"
+"Base Software.lvlib:Main.lvlib:Base Software" *-- "Config.lvlibp:Config"
+
+"Base Software.lvlib:Main.lvlib:Base Software" o-- "Actor Framework.lvlibp:Message Enqueuer"
+
+
+@enduml
+....
+
+.Functions
+[cols="<.<4d,<.<8a,<.<12d,<.<1a,<.<1a,<.<1a", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Name |Connector pane |Description |S. |R. |I.
+
+|Login
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Login.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Login.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Manual
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Manual.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Manual.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Read Bottom Panel ref
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Read_Bottom_Panel_ref.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Read Bottom Panel ref.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Read Left Panel ref
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Read_Left_Panel_ref.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Read Left Panel ref.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Read Prime Panel ref
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Read_Prime_Panel_ref.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Read Prime Panel ref.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Read Right Panel ref
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Read_Right_Panel_ref.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Read Right Panel ref.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Write Splitters
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Write_Splitters.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Write Splitters.vi]
+|+++Array of splitter references in Order Shall be:+++
++++0 Top+++
++++1 Right+++
++++2 Bottom +++
++++3 Left+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Read Model
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Read_Model.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Read Model.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Write Model
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Write_Model.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Write Model.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Read Operator
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Read_Operator.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Read Operator.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Write Operator
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Write_Operator.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Write Operator.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Read Powered Time Ref
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Read_Powered_Time_Ref.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Read Powered Time Ref.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Read Serial
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Read_Serial.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Read Serial.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Write Serial
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Write_Serial.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Write Serial.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Read UUT Name
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Read_UUT_Name.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Read UUT Name.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Read Witness
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Read_Witness.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Read Witness.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Write Witness
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Write_Witness.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Write Witness.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Read Logged_On
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Read_Logged_On.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Read Logged_On.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Logged_On
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Write_Logged_On.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Write Logged_On.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read Previous State
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Read_Previous_State.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Read Previous State.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write Previous State
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Write_Previous_State.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Write Previous State.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read State
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Read_State.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Read State.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write State
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Write_State.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Write State.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Read UUT_Info
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Read_UUT_Info.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Read UUT_Info.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Write UUT_Info
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Write_UUT_Info.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Write UUT_Info.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Automation Update Test Name
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Automation_Update_Test_Name.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Automation Update Test Name.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Query Instruments
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Query_Instruments.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Query Instruments.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Query UUT Details
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Query_UUT_Details.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Query UUT Details.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Update Automation Reference
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Update_Automation_Reference.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Update Automation Reference.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Launch Main
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Launch_Main.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Launch Main.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Launch Subordinate and Add
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Launch_Subordinate_and_Add.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Launch Subordinate and Add.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Process Test Name Event
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Process_Test_Name_Event.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Process Test Name Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Respond to Menu Event
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Respond_to_Menu_Event.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Respond to Menu Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Show Splash Screen
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Show_Splash_Screen.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Show Splash Screen.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Toggle Component Display
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Toggle_Component_Display.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Toggle Component Display.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Update System Status
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Update_System_Status.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Update System Status.vi]
+|+++This tool reads the system status and updates the state as needed+++
++++There is some complex state controls in here:+++
+
++++If we are sending a nominal status message -> we will update the state+++
++++to the most recent "Healthy State" ->  This assumes that we've transitioned+++
++++from a warning or error state back to a healty state+++
+
++++If we are sending a warning message, update the current state to warning,+++
++++but retain the previous state so we can return to a healty state+++
+
++++If we are sending an erro message, update the current state to error,+++
++++but retain the previous state so we can return to a healty state+++
+
++++After state data is updated, refresh the system state indicator+++
+
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Actor Core
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Actor_Core.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Actor Core.vi]
+|+++The user interface for this panel.+++
+
++++----+++
++++Please see the following web address for additional documentation and tutorial information:+++
++++http://www.mooregoodideas.com/mgi-panel-manager/+++
+
++++Author: Derek Trepanier+++
+
++++Copyright (c) 2018, Moore Good Ideas, Inc.+++
+
++++All rights reserved.+++
+
++++Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:+++
+
++++    * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.+++
++++    * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.+++
++++    * Neither the name of Moore Good Ideas, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.+++
+
++++THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.+++
+
+|image:scope-protected.png[scope-protected.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Pre Launch Init
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Pre_Launch_Init.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Pre Launch Init.vi]
+|No description found (add content in vi description)
+|image:scope-protected.png[scope-protected.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Reset Manual Layout
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Reset_Manual_Layout.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Reset Manual Layout.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Stop Core
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Stop_Core.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Stop Core.vi]
+|+++In addition to the following, this method also sends a message to the monitor to notify it that the actor has stopped execution.+++
+
++++(<B>Filename</B>: Actor Framework.lvlib:Actor.lvclass:Stop Core.vi)+++
+
+
+
++++Defines what the actor does before it stops. Use the <B>final error code</B> input to determine whether the actor shut down in response to an error.+++
+
+
+
++++By default, this method does nothing. A descendant class may override it to define behavior, such as shutting down any processes the actor initiated in its override of the Actor Core method.+++
+
+
+
++++Copyright: MGI+++
+
+
+
++++Authored by Derek Trepanier+++
++++support@mooregoodideas.com+++
++++www.mooregoodideas.com+++
+
++++Copyright (c) 2014, Moore Good Ideas, Inc.+++
+
++++All rights reserved.+++
+
++++Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:+++
+
++++    * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.+++
++++    * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.+++
++++    * Neither the name of Moore Good Ideas, Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.+++
+
++++THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.+++
+
+|image:scope-protected.png[scope-protected.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Log On
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Log_On.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Log On.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Update Model Serial
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Update_Model_Serial.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Update Model Serial.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Update Test Name
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Update_Test_Name.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Update Test Name.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Launch Chronometer
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Launch_Chronometer.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Launch Chronometer.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Launch Configuration UI
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Launch_Configuration_UI.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Launch Configuration UI.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Launch Debugger
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Launch_Debugger.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Launch Debugger.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Launch Fault Monitor
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Launch_Fault_Monitor.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Launch Fault Monitor.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Launch Manual Buttons
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Launch_Manual_Buttons.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Launch Manual Buttons.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Launch Manual UI
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Launch_Manual_UI.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Launch Manual UI.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Launch Report Generator
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Launch_Report_Generator.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Launch Report Generator.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Launch Report Viewer UI
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Launch_Report_Viewer_UI.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Launch Report Viewer UI.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Create Events
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Create_Events.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Create Events.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Create Report Queue
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Create_Report_Queue.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Create Report Queue.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Read Configuration Items
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Read_Configuration_Items.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Read Configuration Items.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Launch Subordinates
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Launch_Subordinates.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Launch Subordinates.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Reset Instruments
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Reset_Instruments.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Reset Instruments.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Add Subordinate
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Add_Subordinate.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Add Subordinate.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Launch Subordinate
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Launch_Subordinate.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Launch Subordinate.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Search for Subordinate
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Search_for_Subordinate.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Search for Subordinate.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Pull GUI References
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Pull_GUI_References.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Pull GUI References.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Idle Logic
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Idle_Logic.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Idle Logic.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Manual Enabled
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Manual_Enabled.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Manual Enabled.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Refresh Controls
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Refresh_Controls.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Refresh Controls.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Refresh State
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Refresh_State.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Refresh State.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Indicator_Color
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Indicator_Color.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Indicator_Color.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Set UUT Name
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Set_UUT_Name.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Set UUT Name.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Show Mission Screen
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Show_Mission_Screen.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Show Mission Screen.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Initialize
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Initialize.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Initialize.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Post Launch Init
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Post_Launch_Init.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Post Launch Init.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Shutdown
+|image:Base_Software.lvlib_Main.lvlib_Base_Software.lvclass_Shutdown.vi.png[Base Software.lvlib:Main.lvlib:Base Software.lvclass:Shutdown.vi]
+|No description found (add content in vi description)
+|image:scope-private.png[scope-private.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|===
+
+**S**cope: image:scope-protected.png[] -> Protected | image:scope-community.png[] -> Community | image:scope-private.png[] -> Private
+
+**R**eentrancy: image:reentrancy-preallocated.png[] -> Preallocated reentrancy | image:reentrancy-shared.png[] -> Shared reentrancy
+
+**I**nlining: image:inlined.png[] -> Inlined

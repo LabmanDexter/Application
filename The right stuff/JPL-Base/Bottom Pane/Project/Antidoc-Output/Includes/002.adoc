@@ -1,0 +1,34 @@
+== Classes overview
+
+This project contains 1 classe and 0 interface.
+
+.Classes list
+[cols="", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Classes |Interfaces
+
+|<<Bottom.lvclass>>
+|
+|===
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "Bottom.lvlib:Bottom" {
+{method} #Actor Core()
+{method} +Adjust Splitter()
+
+}
+"Engine.lvlibp:Engine" <|-- "Bottom.lvlib:Bottom"
+
+
+
+@enduml
+....

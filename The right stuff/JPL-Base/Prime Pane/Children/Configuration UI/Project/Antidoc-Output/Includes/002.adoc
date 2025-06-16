@@ -1,0 +1,87 @@
+== Classes overview
+
+This project contains 1 classe and 0 interface.
+
+.Classes list
+[cols="", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Classes |Interfaces
+
+|<<Configuration UI.lvclass>>
+|
+|===
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "Configuration UI.lvlib:Reset Msg" {
+{static} {method} +Send Reset()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Configuration UI.lvlib:Reset Msg"
+
+
+class "Configuration UI.lvlib:Add Device Msg" {
+{static} {method} +Send Add Device()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Configuration UI.lvlib:Add Device Msg"
+
+
+class "Configuration UI.lvlib:Save Keys Msg" {
+{static} {method} +Send Save Keys()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Configuration UI.lvlib:Save Keys Msg"
+
+
+class "Configuration UI.lvlib:Select Instrument Msg" {
+{field} -Selected : I32
+{static} {method} +Send Select Instrument()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Configuration UI.lvlib:Select Instrument Msg"
+
+
+class "Configuration UI.lvlib:Remove Device Msg" {
+{static} {method} +Send Remove Device()
+{method} +Do()
+
+}
+"Actor Framework.lvlibp:Message" <|-- "Configuration UI.lvlib:Remove Device Msg"
+
+
+class "Configuration UI.lvlib:Configuration UI" {
+{field} +Instrument Listbox : kLVObjListBox
+{field} +Keys Refnum : kLVObjMCListbox
+{field} +Signal Refnum : kLVObjMCListbox
+{field} +Config : LV Class
+{static} {method} +Select Instrument()
+{static} {method} +Add Device()
+{static} {method} +Remove Device()
+{static} {method} +Reset()
+{static} {method} +Save Keys()
+{static} {method} -Load Configuration()
+{static} {method} -Load Required Keys()
+{static} {method} -Refresh UI()
+{method} #Actor Core()
+
+}
+"Prime Panel.lvlibp:Prime Panel" <|-- "Configuration UI.lvlib:Configuration UI"
+"Configuration UI.lvlib:Configuration UI" *-- "Config.lvlibp:Config"
+
+
+
+@enduml
+....
